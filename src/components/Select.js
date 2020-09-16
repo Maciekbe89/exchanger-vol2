@@ -1,31 +1,9 @@
 import React, {useState, useEffect} from "react";
+import {popularCurrencies, currencyNames} from "../utils";
 
 const Select = ({label}) => {
   const [currency, setCurrency] = useState([]);
   const API = `https://api.exchangeratesapi.io/latest?base=PLN`;
-
-  const recentCurrencies = [
-    {
-      value: "PLN",
-      name: "Polish Zloty",
-    },
-    {
-      value: "EUR",
-      name: "Euro",
-    },
-    {
-      value: "USD",
-      name: "US Dollar",
-    },
-    {
-      value: "GBP",
-      name: "British Pound",
-    },
-  ];
-
-  const currencyNames = {
-    RUB: "Russian Rubel",
-  };
 
   useEffect(() => {
     fetch(API)
@@ -44,8 +22,8 @@ const Select = ({label}) => {
     <div>
       <label>{label}</label>
       <select>
-        <optgroup label="Recent">
-          {recentCurrencies.map(({value, name}) => (
+        <optgroup label="Popular">
+          {popularCurrencies.map(({value, name}) => (
             <option key={value} value={value}>
               {value} - {name}
             </option>
@@ -54,7 +32,7 @@ const Select = ({label}) => {
         <optgroup label="All">
           {currency.map((item) => (
             <option key={item} value={item}>
-              {item} - {currencyNames[item] || "dupa"}
+              {item} - {currencyNames[item] || "local currency"}
             </option>
           ))}
         </optgroup>
