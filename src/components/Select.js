@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from "react";
 import {popularCurrencies, currencyNames} from "../utils";
 
-const Select = ({label}) => {
-  const [currency, setCurrency] = useState([]);
+const Select = ({label, value, setCurrency}) => {
+  const [currencies, setCurrencies] = useState([]);
   const API = `https://api.exchangeratesapi.io/latest?base=PLN`;
 
   useEffect(() => {
@@ -15,13 +15,13 @@ const Select = ({label}) => {
       })
       .then((response) => response.json())
       .then((data) => {
-        setCurrency(Object.keys(data.rates));
+        setCurrencies(Object.keys(data.rates));
       });
-  }, []);
+  }, [API]);
   return (
     <div>
       <label>{label}</label>
-      <select>
+      <select value={value} onChange={(e) => setCurrency(e.target.value)}>
         <optgroup label="Popular">
           {popularCurrencies.map(({value, name}) => (
             <option key={value} value={value}>
@@ -30,8 +30,8 @@ const Select = ({label}) => {
           ))}
         </optgroup>
         <optgroup label="All">
-          {currency.map((item) => (
-            <option key={item} value={item}>
+          {currencies.map((item) => (
+            <option style={{color: "green"}} key={item} value={item}>
               {item} - {currencyNames[item] || "local currency"}
             </option>
           ))}
