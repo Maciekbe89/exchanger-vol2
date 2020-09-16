@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import {popularCurrencies, currencyNames} from "../utils";
+import "./Select.css";
 
 const Select = ({label, value, setCurrency}) => {
   const [currencies, setCurrencies] = useState([]);
@@ -21,10 +22,13 @@ const Select = ({label, value, setCurrency}) => {
   return (
     <div>
       <label>{label}</label>
-      <select value={value} onChange={(e) => setCurrency(e.target.value)}>
+      <select
+        className="select"
+        value={value}
+        onChange={(e) => setCurrency(e.target.value)}>
         <optgroup label="Popular">
           {popularCurrencies.map(({value, name}) => (
-            <option key={value} value={value}>
+            <option style={{fontSize: 20}} key={value} value={value}>
               {value} - {name}
             </option>
           ))}

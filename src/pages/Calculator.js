@@ -11,6 +11,7 @@ const Calculator = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+    setAmount(0);
     fetch(API)
       .then((response) => {
         if (response.ok) {
@@ -22,6 +23,8 @@ const Calculator = () => {
       .then((data) => {
         setResult(amount * data.rates[currencyTo]);
       });
+    console.log(amount);
+    setAmount(e.target.reset());
   };
 
   return (
@@ -34,7 +37,7 @@ const Calculator = () => {
       />
       <Select label="To:" value={currencyTo} setCurrency={setCurrencyTo} />
       <Button />
-      <div>Result: {result.toFixed(2)}</div>
+      <div>Result: {result ? result.toFixed(2) : "-"}</div>
     </form>
   );
 };
