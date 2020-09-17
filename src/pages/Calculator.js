@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Select, Input, Button} from "../components";
+import {SelectMenu, Input, Button} from "../components";
 
 const Calculator = () => {
   const [amount, setAmount] = useState(0);
@@ -11,7 +11,6 @@ const Calculator = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    setAmount(0);
     fetch(API)
       .then((response) => {
         if (response.ok) {
@@ -30,12 +29,12 @@ const Calculator = () => {
   return (
     <form onSubmit={onSubmit}>
       <Input onChange={(e) => setAmount(e.target.value)} />
-      <Select
+      <SelectMenu
         label="From:"
         value={currencyFrom}
         setCurrency={setCurrencyFrom}
       />
-      <Select label="To:" value={currencyTo} setCurrency={setCurrencyTo} />
+      <SelectMenu label="To:" value={currencyTo} setCurrency={setCurrencyTo} />
       <Button />
       <div>Result: {result ? result.toFixed(2) : "-"}</div>
     </form>

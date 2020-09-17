@@ -5,9 +5,10 @@
   border: solid 1px #ddd;
   cursor: pointer;
   border-radius: 5px;
+  /* appearance: none; */
 }
 
-.select option {
+select.select option.option {
   background-color: green;
   font-size: 20px;
   margin: 20px 0;
