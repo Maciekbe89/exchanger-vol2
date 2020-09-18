@@ -1,15 +1,14 @@
 .select {
   padding: 8px 12px;
-  color: #333;
-  background-color: #eee;
+  color: pink;
+  background-color: green;
   border: solid 1px #ddd;
   cursor: pointer;
   border-radius: 5px;
+  width: 250px;
   /* appearance: none; */
 }
-
-select.select option.option {
-  background-color: green;
-  font-size: 20px;
-  margin: 20px 0;
+.react-select-container {
+  width: 300px;
+  background-color: pink;
 }
