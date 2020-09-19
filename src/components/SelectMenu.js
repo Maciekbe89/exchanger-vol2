@@ -1,21 +1,20 @@
 import React, {useState, useEffect} from "react";
 import {popularCurrencies, currencyNames} from "../utils";
-import PL from "../assets/pl.png";
-import Select from "react-select";
+import Select, {components} from "react-select";
 import "./Select.css";
 
-const CustomOption = ({innerProps}) => (
-  <div {...innerProps}>
-    {popularCurrencies.map(({value, name}) => (
-      <>
-        <img src={PL} alt="flag" style={{width: "30px", borderRadius: "50%"}} />
-        <p className="option" key={value} value={value}>
-          {value} - {name}
-        </p>
-      </>
-    ))}
-  </div>
+const {Option} = components;
+const CustomOption = (props) => (
+  <Option {...props}>
+    <img
+      src={props.data.icon}
+      alt="flag"
+      style={{width: "30px", borderRadius: "30%", margin: "0 15px"}}
+    />
+    <span>{props.data.label}</span>
+  </Option>
 );
+
 const SelectMenu = ({label, value, setCurrency}) => {
   const [currencies, setCurrencies] = useState([]);
   const API = `https://api.exchangeratesapi.io/latest?base=PLN`;
@@ -35,12 +34,13 @@ const SelectMenu = ({label, value, setCurrency}) => {
   }, [API]);
 
   const options = [
-    // ...popularCurrencies.map(({value, name}) => {
-    //   return {
-    //     value: value,
-    //     label: `${value} - ${name}`,
-    //   };
-    // }),
+    ...popularCurrencies.map(({value, name, icon}) => {
+      return {
+        value: value,
+        label: `${value} - ${name}`,
+        icon: icon,
+      };
+    }),
     ...currencies.map((item) => {
       return {
         value: item,
