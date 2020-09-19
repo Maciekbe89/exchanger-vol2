@@ -1,7 +1,7 @@
-import PL from "../assets/pl.png";
-import EU from "../assets/eu.png";
-import US from "../assets/us.png";
-import GB from "../assets/gb.png";
+import PL from "../assets/flags/pl.png";
+import EU from "../assets/flags/eu.png";
+import US from "../assets/flags/us.png";
+import GB from "../assets/flags/gb.png";
 
 export const popularCurrencies = [
   {

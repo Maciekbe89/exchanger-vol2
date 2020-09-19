@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import {popularCurrencies, currencyNames} from "../utils";
+import {popularCurrencies, currencyNames, flags} from "../utils";
 import Select, {components} from "react-select";
 import "./Select.css";
 
@@ -9,7 +9,12 @@ const CustomOption = (props) => (
     <img
       src={props.data.icon}
       alt="flag"
-      style={{width: "30px", borderRadius: "30%", margin: "0 15px"}}
+      style={{
+        width: "30px",
+        height: "20px",
+        borderRadius: "30%",
+        margin: "0 15px",
+      }}
     />
     <span>{props.data.label}</span>
   </Option>
@@ -45,6 +50,7 @@ const SelectMenu = ({label, value, setCurrency}) => {
       return {
         value: item,
         label: `${item} - ${currencyNames[item] || "local currency"}`,
+        icon: `${flags[item]}`,
       };
     }),
   ];
