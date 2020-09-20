@@ -10,8 +10,8 @@ const CustomOption = (props) => (
       src={props.data.icon}
       alt="flag"
       style={{
-        width: "30px",
-        height: "20px",
+        width: "25px",
+        height: "15px",
         borderRadius: "30%",
         margin: "0 15px",
       }}
@@ -39,20 +39,30 @@ const SelectMenu = ({label, value, setCurrency}) => {
   }, [API]);
 
   const options = [
-    ...popularCurrencies.map(({value, name, icon}) => {
-      return {
-        value: value,
-        label: `${value} - ${name}`,
-        icon: icon,
-      };
-    }),
-    ...currencies.map((item) => {
-      return {
-        value: item,
-        label: `${item} - ${currencyNames[item] || "local currency"}`,
-        icon: `${flags[item]}`,
-      };
-    }),
+    {
+      label: "popular",
+      options: [
+        ...popularCurrencies.map(({value, name, icon}) => {
+          return {
+            value: value,
+            label: `${value} - ${name}`,
+            icon: icon,
+          };
+        }),
+      ],
+    },
+    {
+      label: "all",
+      options: [
+        ...currencies.map((item) => {
+          return {
+            value: item,
+            label: `${item} - ${currencyNames[item] || "local currency"}`,
+            icon: `${flags[item]}`,
+          };
+        }),
+      ],
+    },
   ];
 
   return (

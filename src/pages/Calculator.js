@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import {SelectMenu, Input, Button} from "../components";
+import PL from "../assets/flags/pl.png";
 
 const Calculator = () => {
   const [amount, setAmount] = useState(0);
@@ -7,6 +8,7 @@ const Calculator = () => {
   const [currencyFrom, setCurrencyFrom] = useState({
     value: "PLN",
     label: "PLN - Polish Zloty",
+    icon: `${PL}`,
   });
   const [currencyTo, setCurrencyTo] = useState({
     value: "EUR",
