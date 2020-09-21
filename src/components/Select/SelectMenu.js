@@ -1,24 +1,9 @@
 import React, {useState, useEffect} from "react";
-import {popularCurrencies, currencyNames, flags} from "../utils";
-import Select, {components} from "react-select";
+import {popularCurrencies, currencyNames, flags} from "../../utils";
+import Select from "react-select";
+import CustomOption from "./CustomOption";
+import CustomFlag from "./CustomFlag";
 import "./Select.css";
-
-const {Option} = components;
-const CustomOption = (props) => (
-  <Option {...props}>
-    <img
-      src={props.data.icon}
-      alt="flag"
-      style={{
-        width: "25px",
-        height: "15px",
-        borderRadius: "30%",
-        margin: "0 15px",
-      }}
-    />
-    <span>{props.data.label}</span>
-  </Option>
-);
 
 const SelectMenu = ({label, value, setCurrency}) => {
   const [currencies, setCurrencies] = useState([]);
@@ -72,7 +57,7 @@ const SelectMenu = ({label, value, setCurrency}) => {
         value={value}
         onChange={(value) => setCurrency(value)}
         options={options}
-        components={{Option: CustomOption}}
+        components={{Option: CustomOption, SingleValue: CustomFlag}}
       />
     </div>
   );

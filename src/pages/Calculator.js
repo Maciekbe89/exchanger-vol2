@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 import {SelectMenu, Input, Button} from "../components";
+import {currencyFormat} from "../utils";
 import PL from "../assets/flags/pl.png";
+import EU from "../assets/flags/eu.png";
 
 const Calculator = () => {
   const [amount, setAmount] = useState(0);
@@ -13,6 +15,7 @@ const Calculator = () => {
   const [currencyTo, setCurrencyTo] = useState({
     value: "EUR",
     label: "EUR - Euro",
+    icon: `${EU}`,
   });
 
   const API = `https://api.exchangeratesapi.io/latest?base=${currencyFrom.value}`;
@@ -44,7 +47,15 @@ const Calculator = () => {
       />
       <SelectMenu label="To:" value={currencyTo} setCurrency={setCurrencyTo} />
       <Button />
-      <div>Result: {result ? result.toFixed(2) : "-"}</div>
+      <div>
+        Result:{" "}
+        {result
+          ? new Intl.NumberFormat(`${currencyFormat[currencyTo.value]}`, {
+              style: "currency",
+              currency: `${currencyTo.value}`,
+            }).format(result.toFixed(2))
+          : "-"}
+      </div>
     </form>
   );
 };
