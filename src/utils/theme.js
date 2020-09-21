@@ -1,5 +1,5 @@
 export default {
-  colors: {
+  color: {
     blue: {
       light: "#5E83F2",
       normal: "#0B3ED9",
