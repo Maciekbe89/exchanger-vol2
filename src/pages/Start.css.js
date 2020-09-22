@@ -3,7 +3,7 @@ import styled, {keyframes} from "styled-components";
 const rotate = keyframes`
 from {
     transform: rotateY(0);
-    left: -5%;
+    left: -15%;
 }
 to {
     transform: rotateY(360deg);
@@ -21,38 +21,66 @@ to {
 }
 `;
 
+const hearts = keyframes`
+0% {
+    transform: scale(1);
+  }
+  5% {
+    transform: scale(1.1);
+  }
+  10% {
+    transform: scale(1);
+  }
+  15% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+`;
+
 export const StartContainer = styled.div`
+  position: relative;
   display: grid;
   grid-template-rows: 80% 20%;
   height: 100vh;
+  overflow: hidden;
   background-color: ${({theme}) => theme.color.blue.dark};
-  /* overflow-y: hidden; */
 `;
 
 export const Main = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100%;
 `;
 
 export const BottomCta = styled(Main)`
   border-radius: 25% 25% 0 0;
   background-color: #fff;
   font-size: 24px;
-  margin: 0;
+`;
+
+export const Text = styled.button`
+  font-size: 24px;
+  animation: ${hearts} 2.5s linear infinite;
 `;
 
 export const Icons = styled.img`
   position: absolute;
-  left: -17%;
+  left: -16%;
   z-index: 2;
-  opacity: 0.4;
+  opacity: 0.25;
   animation: ${rotate} 4.5s linear infinite;
 `;
 
 export const DollarIcon = styled(Icons)`
-  height: 80px;
-  top: 5%;
+  height: 70px;
+  top: 4%;
 `;
 export const EuroIcon = styled(Icons)`
   height: 50px;
@@ -72,7 +100,6 @@ export const ShekelIcon = styled(Icons)`
 export const WonIcon = styled(Icons)`
   height: 45px;
   top: 15%;
-  /* left: -20%; */
   animation-delay: 3s;
 `;
 export const YenIcon = styled(Icons)`

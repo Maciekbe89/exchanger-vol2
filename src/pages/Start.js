@@ -10,6 +10,7 @@ import {
   ShekelIcon,
   WonIcon,
   YenIcon,
+  Text,
 } from "./Start.css";
 import Dollar from "../assets/svg/dollar.svg";
 import Euro from "../assets/svg/euro.svg";
@@ -18,7 +19,7 @@ import Shekel from "../assets/svg/shekel.svg";
 import Won from "../assets/svg/won.svg";
 import Yen from "../assets/svg/yen.svg";
 
-const Start = () => {
+const Start = ({getStart}) => {
   return (
     <StartContainer>
       <Main>
@@ -31,7 +32,7 @@ const Start = () => {
         <YenIcon src={Yen} />
       </Main>
       <BottomCta>
-        <p>Get Start</p>
+        <Text onClick={getStart}>Get Start</Text>
       </BottomCta>
     </StartContainer>
   );

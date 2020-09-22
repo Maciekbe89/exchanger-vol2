@@ -18,9 +18,14 @@ ${normalize}
  
 }
 
+html {
+  /* overflow: hidden; */
+  
+}
+
 body {
   font-family: "Oswald", sans-serif;
-  
+  /* overflow: hidden; */
 }
 
 `;
