@@ -1,8 +1,8 @@
 import React, {useState} from "react";
-import {SelectMenu, Input, Button} from "../components";
-import {currencyFormat} from "../utils";
-import PL from "../assets/flags/pl.png";
-import EU from "../assets/flags/eu.png";
+import {SelectMenu, Input, Button} from "../../components";
+import {currencyFormat} from "../../utils";
+import PL from "../../assets/flags/pl.png";
+import EU from "../../assets/flags/eu.png";
 
 const Calculator = () => {
   const [amount, setAmount] = useState(0);
@@ -46,7 +46,7 @@ const Calculator = () => {
         setCurrency={setCurrencyFrom}
       />
       <SelectMenu label="To:" value={currencyTo} setCurrency={setCurrencyTo} />
-      <Button />
+      <Button>SENT</Button>
       <div>
         Result:{" "}
         {result

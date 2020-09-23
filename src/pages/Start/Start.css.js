@@ -21,28 +21,6 @@ to {
 }
 `;
 
-const hearts = keyframes`
-0% {
-    transform: scale(1);
-  }
-  5% {
-    transform: scale(1.1);
-  }
-  10% {
-    transform: scale(1);
-  }
-  15% {
-    transform: scale(1.2);
-  }
-  50% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-`;
-
 export const StartContainer = styled.div`
   position: relative;
   display: grid;
@@ -63,11 +41,6 @@ export const BottomCta = styled(Main)`
   border-radius: 25% 25% 0 0;
   background-color: #fff;
   font-size: 24px;
-`;
-
-export const Text = styled.button`
-  font-size: 24px;
-  animation: ${hearts} 2.5s linear infinite;
 `;
 
 export const Icons = styled.img`
