@@ -10,10 +10,15 @@ export const NavWrapper = styled.nav`
 `;
 
 export const Link = styled(NavLink)`
-  color: white;
+  opacity: 0.4;
+  color: #fff;
   text-decoration: none;
-
+  padding: 10px;
+  outline: none;
   &.active {
-    color: orange;
+    color: white;
+    border: solid 0.5px white;
+    opacity: 1;
+    border-radius: 50%;
   }
 `;

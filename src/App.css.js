@@ -1,5 +1,9 @@
-import {createGlobalStyle} from "styled-components";
+import styled, {createGlobalStyle} from "styled-components";
 import {normalize} from "styled-normalize";
+import {CalculatorFill} from "@styled-icons/bootstrap/CalculatorFill";
+import {ChartLine} from "@styled-icons/fa-solid/ChartLine";
+import {Newspaper} from "@styled-icons/ionicons-sharp/Newspaper";
+
 import Oswald from "./assets/font/Oswald-Regular.ttf";
 
 export default createGlobalStyle`
@@ -22,4 +26,18 @@ body {
   font-family: "Oswald", sans-serif;
 }
 
+
+`;
+
+export const CalcIcon = styled(CalculatorFill)`
+  height: 25px;
+  /* color: white; */
+`;
+export const ChartIcon = styled(ChartLine)`
+  height: 25px;
+  /* color: white; */
+`;
+export const NewsIcon = styled(Newspaper)`
+  height: 25px;
+  /* color: white; */
 `;
