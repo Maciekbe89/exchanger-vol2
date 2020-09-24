@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import {SelectMenu, Input, Button} from "../../components";
+import {Form} from "./Calculator.css";
 import {currencyFormat} from "../../utils";
 import PL from "../../assets/flags/pl.png";
 import EU from "../../assets/flags/eu.png";
@@ -38,7 +39,7 @@ const Calculator = () => {
   };
 
   return (
-    <form onSubmit={onSubmit}>
+    <Form onSubmit={onSubmit}>
       <Input onChange={(e) => setAmount(e.target.value)} />
       <SelectMenu
         label="From:"
@@ -56,7 +57,7 @@ const Calculator = () => {
             }).format(result.toFixed(2))
           : "-"}
       </div>
-    </form>
+    </Form>
   );
 };
 

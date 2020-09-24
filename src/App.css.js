@@ -30,14 +30,14 @@ body {
 `;
 
 export const CalcIcon = styled(CalculatorFill)`
-  height: 25px;
+  height: 28px;
   /* color: white; */
 `;
 export const ChartIcon = styled(ChartLine)`
-  height: 25px;
+  height: 28px;
   /* color: white; */
 `;
 export const NewsIcon = styled(Newspaper)`
-  height: 25px;
+  height: 28px;
   /* color: white; */
 `;

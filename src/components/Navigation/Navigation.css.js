@@ -15,10 +15,12 @@ export const Link = styled(NavLink)`
   text-decoration: none;
   padding: 10px;
   outline: none;
+  -webkit-tap-highlight-color: transparent;
   &.active {
     color: white;
-    border: solid 0.5px white;
+    /* border-bottom: solid 0.5px white; */
     opacity: 1;
-    border-radius: 50%;
+    /* font-size: 20px; */
+    /* border-radius: 50%; */
   }
 `;
