@@ -2,11 +2,7 @@ import React from "react";
 import {Dollar} from "./Loading.css";
 
 const Loading = () => {
-  return (
-    <>
-      <Dollar />
-    </>
-  );
+  return <Dollar />;
 };
 
 export default Loading;

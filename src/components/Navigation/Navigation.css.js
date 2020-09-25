@@ -18,9 +18,24 @@ export const Link = styled(NavLink)`
   -webkit-tap-highlight-color: transparent;
   &.active {
     color: white;
-    /* border-bottom: solid 0.5px white; */
     opacity: 1;
-    /* font-size: 20px; */
-    /* border-radius: 50%; */
   }
+`;
+
+export const TitleCta = styled.div`
+  display: grid;
+  grid-template-columns: 30% 70%;
+  height: 10vh;
+  background-color: ${({theme}) => theme.color.blue.dark};
+`;
+
+export const Logo = styled.img`
+  height: 80%;
+  margin: auto;
+`;
+
+export const Title = styled.h1`
+  font-size: 16px;
+  margin: auto;
+  color: #fff;
 `;

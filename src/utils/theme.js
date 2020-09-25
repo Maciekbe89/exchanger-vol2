@@ -2,7 +2,7 @@ export default {
   color: {
     blue: {
       light: "#6D808C",
-      normal: "#274659",
+      normal: "#0D65D9",
       dark: "#062540",
     },
     orange: {

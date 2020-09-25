@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {Calculator, Start, Charts, News} from "./pages";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
-import {Navigation} from "./components";
+import {Navigation, NavTop} from "./components";
 import GlobalStyles, {CalcIcon, ChartIcon, NewsIcon} from "./App.css.js";
 
 function App() {
@@ -13,8 +13,10 @@ function App() {
 
       {/* {active ? (
         <Start getStart={() => setActive(false)} />
-      ) : ( */}
+      ) : (
+        <> */}
       <Router>
+        <NavTop>currency calculator</NavTop>
         <Switch>
           <Route exact path="/" component={Calculator} />
           <Route path="/charts" component={Charts} />
@@ -24,11 +26,12 @@ function App() {
           items={[
             {content: <CalcIcon />, to: "/"},
             {content: <ChartIcon />, to: "/charts"},
-            {content: <NewsIcon />, to: "/News"},
+            {content: <NewsIcon />, to: "/news"},
           ]}
         />
       </Router>
-      {/* )} */}
+      {/* </>
+      )} */}
     </>
   );
 }
