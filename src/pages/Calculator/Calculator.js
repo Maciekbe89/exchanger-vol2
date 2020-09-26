@@ -34,7 +34,7 @@ const Calculator = () => {
       .then((data) => {
         setResult(amount * data.rates[currencyTo.value]);
       });
-    console.log(amount);
+    // console.log(amount);
     setAmount(e.target.reset());
   };
 
@@ -49,13 +49,13 @@ const Calculator = () => {
       <SelectMenu label="To:" value={currencyTo} setCurrency={setCurrencyTo} />
       <Button>SENT</Button>
       <div>
-        Result:{" "}
+        {/* {amount ? `${amount + " ="}` : ""} */}
         {result
           ? new Intl.NumberFormat(`${currencyFormat[currencyTo.value]}`, {
               style: "currency",
               currency: `${currencyTo.value}`,
             }).format(result.toFixed(2))
-          : "-"}
+          : ""}
       </div>
     </Form>
   );
