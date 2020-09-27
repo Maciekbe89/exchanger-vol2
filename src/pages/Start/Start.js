@@ -11,7 +11,7 @@ import {
   WonIcon,
   YenIcon,
 } from "./Start.css";
-import {Button} from "../../components/Button/Button.css";
+import {Button} from "../../components";
 import Dollar from "../../assets/svg/dollar.svg";
 import Euro from "../../assets/svg/euro.svg";
 import Pound from "../../assets/svg/pound.svg";
@@ -32,7 +32,7 @@ const Start = ({getStart}) => {
         <YenIcon src={Yen} alt="yen sign" />
       </Main>
       <BottomCta>
-        <Button startBtn onClick={getStart}>
+        <Button primary onClick={getStart}>
           Get Start
         </Button>
       </BottomCta>

@@ -47,7 +47,9 @@ const Calculator = () => {
         setCurrency={setCurrencyFrom}
       />
       <SelectMenu label="To:" value={currencyTo} setCurrency={setCurrencyTo} />
-      <Button>SENT</Button>
+      <Button secondary type="submit">
+        SENT
+      </Button>
       <div>
         {/* {amount ? `${amount + " ="}` : ""} */}
         {result

@@ -1,6 +1,6 @@
 import styled, {keyframes, css} from "styled-components";
 
-const hearts = keyframes`
+const hearts = () => keyframes`
 0% {
     transform: scale(1);
   }
@@ -22,14 +22,10 @@ const hearts = keyframes`
 }
 `;
 
-export const Button = styled.button`
+export const ButtonCta = styled.button`
   font-size: 24px;
   border: none;
   background-color: white;
 
-  ${({startBtn}) =>
-    startBtn &&
-    css`
-      animation: ${hearts} 2.5s linear infinite;
-    `}
+  animation: ${(primary) => hearts(primary)} 2.5s linear infinite;
 `;
