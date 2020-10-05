@@ -8,6 +8,7 @@ import EU from "../../assets/flags/eu.png";
 const Calculator = () => {
   const [amount, setAmount] = useState(0);
   const [result, setResult] = useState(0);
+  const [resultAmount, setResultAmount] = useState(0);
   const [currencyFrom, setCurrencyFrom] = useState({
     value: "PLN",
     label: "PLN - Polish Zloty",
@@ -34,6 +35,7 @@ const Calculator = () => {
       .then((data) => {
         setResult(amount * data.rates[currencyTo.value]);
       });
+    setResultAmount(amount);
     // console.log(amount);
     setAmount(e.target.reset());
   };
@@ -51,7 +53,7 @@ const Calculator = () => {
         SENT
       </Button>
       <div>
-        {/* {amount ? `${amount + " ="}` : ""} */}
+        {resultAmount ? `${resultAmount + " = "}` : ""}
         {result
           ? new Intl.NumberFormat(`${currencyFormat[currencyTo.value]}`, {
               style: "currency",
