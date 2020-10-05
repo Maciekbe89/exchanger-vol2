@@ -32,7 +32,7 @@ const Start = ({getStart}) => {
         <YenIcon src={Yen} alt="yen sign" />
       </Main>
       <BottomCta>
-        <Button primary onClick={getStart}>
+        <Button type="button" primary onClick={getStart}>
           Get Start
         </Button>
       </BottomCta>

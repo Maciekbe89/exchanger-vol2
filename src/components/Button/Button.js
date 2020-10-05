@@ -1,9 +1,9 @@
 import React from "react";
 import {ButtonCta} from "./Button.css";
 
-const Button = ({type, children, onClick}) => {
+const Button = ({type, children, onClick, ...props}) => {
   return (
-    <ButtonCta onClick={onClick} type={type}>
+    <ButtonCta {...props} onClick={onClick} type={type}>
       {children}
     </ButtonCta>
   );

@@ -36,7 +36,6 @@ const Calculator = () => {
         setResult(amount * data.rates[currencyTo.value]);
       });
     setResultAmount(amount);
-    // console.log(amount);
     setAmount(e.target.reset());
   };
 
