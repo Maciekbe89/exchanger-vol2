@@ -11,7 +11,7 @@ const CustomFlag = (props) => (
         width: "25px",
         height: "15px",
         borderRadius: "30%",
-        margin: "0 15px",
+        marginRight: "15px",
       }}
     />
     <span>{props.data.label}</span>

@@ -25,6 +25,7 @@ const hearts = keyframes`
 export const ButtonCta = styled.button`
   font-size: 24px;
   width: 100%;
+  height: 70%;
   border: none;
   background-color: transparent;
   margin: auto;

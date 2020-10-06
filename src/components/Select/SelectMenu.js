@@ -3,7 +3,7 @@ import {popularCurrencies, currencyNames, flags} from "../../utils";
 import Select from "react-select";
 import CustomOption from "./CustomOption";
 import CustomFlag from "./CustomFlag";
-import "./Select.css";
+import {Container, Label} from "./Select.css.js";
 
 const SelectMenu = ({label, value, setCurrency}) => {
   const [currencies, setCurrencies] = useState([]);
@@ -50,16 +50,30 @@ const SelectMenu = ({label, value, setCurrency}) => {
     },
   ];
 
+  const customStyles = {
+    menu: (provided) => ({
+      ...provided,
+      width: "67vw",
+      fontSize: "12px",
+    }),
+    control: (provided) => ({
+      ...provided,
+      width: "67vw",
+      height: 100 + "%",
+    }),
+  };
+
   return (
-    <div>
-      <label>{label}</label>
+    <Container>
+      <Label>{label}</Label>
       <Select
         value={value}
         onChange={(value) => setCurrency(value)}
         options={options}
         components={{Option: CustomOption, SingleValue: CustomFlag}}
+        styles={customStyles}
       />
-    </div>
+    </Container>
   );
 };
 

@@ -1,6 +1,12 @@
 import React, {useState} from "react";
 import {SelectMenu, Input, Button} from "../../components";
-import {Form, Checkmark} from "./Calculator.css";
+import {
+  Form,
+  Checkmark,
+  Result,
+  TotalResult,
+  AmountResult,
+} from "./Calculator.css";
 import {currencyFormat} from "../../utils";
 import PL from "../../assets/flags/pl.png";
 import EU from "../../assets/flags/eu.png";
@@ -39,6 +45,16 @@ const Calculator = () => {
     setAmount(e.target.reset());
   };
 
+  const smallerFont = () => {
+    if (result.toString().length <= 5) {
+      return "70";
+    } else if (result.toString().length < 10 && result.toString().length > 5) {
+      return "40";
+    } else {
+      return "20";
+    }
+  };
+
   return (
     <Form onSubmit={onSubmit}>
       <Input onChange={(e) => setAmount(e.target.value)} />
@@ -51,15 +67,25 @@ const Calculator = () => {
       <Button type="submit" secondary>
         <Checkmark />
       </Button>
-      <div>
-        {resultAmount ? `${resultAmount + " = "}` : ""}
-        {result
-          ? new Intl.NumberFormat(`${currencyFormat[currencyTo.value]}`, {
-              style: "currency",
-              currency: `${currencyTo.value}`,
-            }).format(result.toFixed(2))
-          : ""}
-      </div>
+      <Result>
+        <AmountResult>
+          {" "}
+          {resultAmount
+            ? new Intl.NumberFormat(`${currencyFormat[currencyFrom.value]}`, {
+                style: "currency",
+                currency: `${currencyFrom.value}`,
+              }).format(resultAmount) + " ="
+            : ""}
+        </AmountResult>
+        <TotalResult fontSize={smallerFont}>
+          {result
+            ? new Intl.NumberFormat(`${currencyFormat[currencyTo.value]}`, {
+                style: "currency",
+                currency: `${currencyTo.value}`,
+              }).format(result.toFixed(2))
+            : ""}
+        </TotalResult>
+      </Result>
     </Form>
   );
 };

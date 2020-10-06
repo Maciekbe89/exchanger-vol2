@@ -24,6 +24,7 @@ ${normalize}
 
 body {
   font-family: "Oswald", sans-serif;
+  background-color: ${({theme}) => theme.color.blue.dark}
 }
 
 
