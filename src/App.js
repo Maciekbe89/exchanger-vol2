@@ -11,27 +11,27 @@ function App() {
     <>
       <GlobalStyles />
 
-      {active ? (
+      {/* {active ? (
         <Start getStart={() => setActive(false)} />
       ) : (
-        <>
-          <Router>
-            <NavTop>currency calculator</NavTop>
-            <Switch>
-              <Route exact path="/" component={Calculator} />
-              <Route path="/charts" component={Charts} />
-              <Route path="/news" component={News} />
-            </Switch>
-            <Navigation
-              items={[
-                {content: <CalcIcon />, to: "/"},
-                {content: <ChartIcon />, to: "/charts"},
-                {content: <NewsIcon />, to: "/news"},
-              ]}
-            />
-          </Router>
-        </>
-      )}
+        <> */}
+      <Router>
+        <NavTop>currency calculator</NavTop>
+        <Switch>
+          <Route exact path="/" component={Calculator} />
+          <Route path="/charts" component={Charts} />
+          <Route path="/news" component={News} />
+        </Switch>
+        <Navigation
+          items={[
+            {content: <CalcIcon />, to: "/"},
+            {content: <ChartIcon />, to: "/charts"},
+            {content: <NewsIcon />, to: "/news"},
+          ]}
+        />
+      </Router>
+      {/* </>
+      )} */}
     </>
   );
 }

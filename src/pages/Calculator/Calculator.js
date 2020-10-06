@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {SelectMenu, Input, Button} from "../../components";
-import {Form} from "./Calculator.css";
+import {Form, Checkmark} from "./Calculator.css";
 import {currencyFormat} from "../../utils";
 import PL from "../../assets/flags/pl.png";
 import EU from "../../assets/flags/eu.png";
@@ -48,8 +48,8 @@ const Calculator = () => {
         setCurrency={setCurrencyFrom}
       />
       <SelectMenu label="To:" value={currencyTo} setCurrency={setCurrencyTo} />
-      <Button secondary type="submit">
-        SENT
+      <Button type="submit" secondary>
+        <Checkmark />
       </Button>
       <div>
         {resultAmount ? `${resultAmount + " = "}` : ""}

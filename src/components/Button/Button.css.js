@@ -24,12 +24,20 @@ const hearts = keyframes`
 
 export const ButtonCta = styled.button`
   font-size: 24px;
+  width: 100%;
   border: none;
-  background-color: white;
+  background-color: transparent;
+  margin: auto;
 
   ${({primary}) =>
     primary &&
     css`
       animation: ${hearts} 2.5s linear infinite;
+    `}
+  ${({secondary}) =>
+    secondary &&
+    css`
+      background-color: ${({theme}) => theme.color.orange.normal};
+      border-radius: 5px;
     `}
 `;
