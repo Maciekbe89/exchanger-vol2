@@ -45,15 +45,15 @@ const Calculator = () => {
     setAmount(e.target.reset());
   };
 
-  const smallerFont = () => {
-    if (result.toString().length <= 5) {
-      return "70";
-    } else if (result.toString().length < 10 && result.toString().length > 5) {
-      return "40";
-    } else {
-      return "20";
-    }
-  };
+  // const smallerFont = () => {
+  //   if (result.toString().length <= 5) {
+  //     return "70";
+  //   } else if (result.toString().length < 10 && result.toString().length > 5) {
+  //     return "40";
+  //   } else {
+  //     return "20";
+  //   }
+  // };
 
   return (
     <Form onSubmit={onSubmit}>
@@ -77,7 +77,7 @@ const Calculator = () => {
               }).format(resultAmount) + " ="
             : ""}
         </AmountResult>
-        <TotalResult fontSize={smallerFont}>
+        <TotalResult fontSize={50}>
           {result
             ? new Intl.NumberFormat(`${currencyFormat[currencyTo.value]}`, {
                 style: "currency",
