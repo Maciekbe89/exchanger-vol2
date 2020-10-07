@@ -83,7 +83,7 @@ const Calculator = () => {
                 style: "currency",
                 currency: `${currencyTo.value}`,
               }).format(result.toFixed(2))
-            : ""}
+            : null}
         </TotalResult>
       </Result>
     </Form>
