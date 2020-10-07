@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import Chart from "react-apexcharts";
 import {SelectMenu, Button} from "../../components";
 import {Checkmark} from "../Calculator/Calculator.css";
 import {Container} from "./Charts.css";
@@ -29,7 +30,6 @@ const Charts = () => {
   const API = `https://api.exchangeratesapi.io/history?start_at=${startDate}&end_at=${today}&base=${currencyFrom.value}&symbols=${currencyTo.value}`;
 
   const onSubmit = (e) => {
-    console.log("dupa");
     e.preventDefault();
     fetch(API)
       .then((response) => {
@@ -44,6 +44,70 @@ const Charts = () => {
       });
   };
 
+  const series = [
+    {
+      name: "series1",
+      data: [
+        `${Object.keys(result).map((date) => result[date][currencyTo.value])}`,
+      ],
+    },
+  ];
+  const options = {
+    chart: {
+      foreColor: "#fff",
+      toolbar: {
+        show: true,
+        offsetX: -5,
+        offsetY: -32,
+
+        tools: {
+          download: false,
+          selection: false,
+          zoom: true,
+          pan: false,
+          reset: false,
+          autoSelected: "pan",
+        },
+      },
+      height: 320,
+      type: "area",
+    },
+    colors: ["#FFBE00"],
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      curve: "smooth",
+    },
+
+    xaxis: {
+      labels: {
+        show: true,
+        rotate: -60,
+      },
+      axisTicks: {
+        show: false,
+      },
+      type: "category",
+      categories: [
+        "2020-10-04",
+        "2020-10-05",
+        "2020-10-06",
+        // `${Object.keys(result).map((date) => date)}`],
+      ],
+    },
+    tooltip: {
+      x: {
+        format: "yy/mm/dd",
+      },
+    },
+  };
+
+  // currency value
+  // {
+  //   result[date][currencyTo.value];
+  // }
+
   return (
     <Container onSubmit={onSubmit}>
       <SelectMenu
@@ -55,11 +119,18 @@ const Charts = () => {
       <Button type="submit" secondary>
         <Checkmark smaller />
       </Button>
-      {Object.keys(result).map((date) => (
-        <p>
-          {date} {result[date][currencyTo.value]}
-        </p>
-      ))}
+      <Chart
+        options={options}
+        series={series}
+        type="line"
+        height="50%"
+        width="100%"
+      />
+      {/* {Object.keys(result)
+        .sort()
+        .map((date) => (
+          <p>{date}</p>
+        ))} */}
     </Container>
   );
 };
