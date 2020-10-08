@@ -47,9 +47,9 @@ const Charts = () => {
   const series = [
     {
       name: "series1",
-      data: [
-        `${Object.keys(result).map((date) => result[date][currencyTo.value])}`,
-      ],
+      data: Object.keys(result).map((date) =>
+        parseFloat(result[date][currencyTo.value]).toFixed(2)
+      ),
     },
   ];
   const options = {
@@ -83,22 +83,16 @@ const Charts = () => {
     xaxis: {
       labels: {
         show: true,
-        rotate: -60,
       },
       axisTicks: {
         show: false,
       },
       type: "category",
-      categories: [
-        "2020-10-04",
-        "2020-10-05",
-        "2020-10-06",
-        // `${Object.keys(result).map((date) => date)}`],
-      ],
+      categories: Object.keys(result),
     },
     tooltip: {
       x: {
-        format: "yy/mm/dd",
+        format: "yyyy/mm/dd",
       },
     },
   };
