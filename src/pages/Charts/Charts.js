@@ -4,7 +4,7 @@ import {SelectMenu, Button} from "../../components";
 import {Checkmark} from "../Calculator/Calculator.css";
 import {Container} from "./Charts.css";
 import PL from "../../assets/flags/pl.png";
-import EU from "../../assets/flags/eu.png";
+import US from "../../assets/flags/us.png";
 
 const Charts = () => {
   const [result, setResult] = useState("");
@@ -14,12 +14,12 @@ const Charts = () => {
     icon: `${PL}`,
   });
   const [currencyTo, setCurrencyTo] = useState({
-    value: "EUR",
-    label: "EUR - Euro",
-    icon: `${EU}`,
+    value: "USD",
+    label: "USD - US Dollar",
+    icon: `${US}`,
   });
 
-  const startDate = new Date(new Date().setDate(new Date().getDate() - 30))
+  const startDate = new Date(new Date().setDate(new Date().getDate() - 14))
     .toLocaleDateString()
     .split(".")
     .reverse()
@@ -46,7 +46,7 @@ const Charts = () => {
 
   const series = [
     {
-      name: "series1",
+      name: `${currencyFrom.value} / ${currencyTo.value}`,
       data: Object.keys(result).map((date) =>
         parseFloat(result[date][currencyTo.value]).toFixed(2)
       ),
@@ -56,39 +56,48 @@ const Charts = () => {
     chart: {
       foreColor: "#fff",
       toolbar: {
-        show: true,
+        show: false,
         offsetX: -5,
         offsetY: -32,
 
         tools: {
           download: false,
           selection: false,
-          zoom: true,
+          zoom: false,
           pan: false,
           reset: false,
           autoSelected: "pan",
         },
       },
-      height: 320,
-      type: "area",
+      height: 300,
+      type: "line",
     },
-    colors: ["#FFBE00"],
+    subtitle: {
+      text: `2 weeks: ${currencyFrom.value} / ${currencyTo.value}`,
+      align: "right",
+    },
+
+    // fill: {
+    //   type: "solid",
+    // },
+    colors: ["#F28705"],
     dataLabels: {
       enabled: false,
     },
     stroke: {
       curve: "smooth",
+      width: 3,
     },
 
     xaxis: {
       labels: {
-        show: true,
+        show: false,
       },
       axisTicks: {
         show: false,
       },
       type: "category",
-      categories: Object.keys(result),
+      categories: Object.keys(result).sort(),
     },
     tooltip: {
       x: {
@@ -105,20 +114,26 @@ const Charts = () => {
   return (
     <Container onSubmit={onSubmit}>
       <SelectMenu
+        margin
         label="From:"
         value={currencyFrom}
         setCurrency={setCurrencyFrom}
       />
-      <SelectMenu label="To:" value={currencyTo} setCurrency={setCurrencyTo} />
-      <Button type="submit" secondary>
+      <SelectMenu
+        margin
+        label="To:"
+        value={currencyTo}
+        setCurrency={setCurrencyTo}
+      />
+      <Button type="submit" secondary margin>
         <Checkmark smaller />
       </Button>
       <Chart
         options={options}
         series={series}
         type="line"
-        height="50%"
-        width="100%"
+        height="58%"
+        width="95%"
       />
       {/* {Object.keys(result)
         .sort()

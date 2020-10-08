@@ -5,7 +5,7 @@ import CustomOption from "./CustomOption";
 import CustomFlag from "./CustomFlag";
 import {Container, Label} from "./Select.css.js";
 
-const SelectMenu = ({label, value, setCurrency}) => {
+const SelectMenu = ({label, value, setCurrency, ...props}) => {
   const [currencies, setCurrencies] = useState([]);
   const API = `https://api.exchangeratesapi.io/latest?base=PLN`;
 
@@ -64,7 +64,7 @@ const SelectMenu = ({label, value, setCurrency}) => {
   };
 
   return (
-    <Container>
+    <Container {...props}>
       <Label>{label}</Label>
       <Select
         value={value}

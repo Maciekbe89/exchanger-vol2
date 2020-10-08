@@ -6,5 +6,7 @@ export const Container = styled.form`
   height: 75vh;
   background-color: ${({theme}) => theme.color.blue.dark};
   align-items: center;
-  margin: 0 25px;
+  overflow: hidden;
+  /* margin: 0 25px; */
+  /* overflow: hidden; */
 `;
