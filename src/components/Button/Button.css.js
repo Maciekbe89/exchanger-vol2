@@ -47,4 +47,14 @@ export const ButtonCta = styled.button`
       margin: 0 25px;
       width: auto;
     `}
+     ${({readMore}) =>
+    readMore &&
+    css`
+      width: 30%;
+      height: 8%;
+      border-radius: 5px;
+      background-color: ${({theme}) => theme.color.orange.normal};
+      font-size: 14px;
+      margin: 0;
+    `}
 `;
