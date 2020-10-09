@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import Chart from "react-apexcharts";
 import {SelectMenu, Button} from "../../components";
 import {Checkmark} from "../Calculator/Calculator.css";
-import {Container} from "./Charts.css";
+import {Container, ChartWrapper} from "./Charts.css";
 import PL from "../../assets/flags/pl.png";
 import US from "../../assets/flags/us.png";
 
@@ -57,33 +57,20 @@ const Charts = () => {
       foreColor: "#fff",
       toolbar: {
         show: false,
-        offsetX: -5,
-        offsetY: -32,
-
-        tools: {
-          download: false,
-          selection: false,
-          zoom: false,
-          pan: false,
-          reset: false,
-          autoSelected: "pan",
-        },
       },
       height: 300,
       type: "line",
+    },
+    dataLabels: {
+      enabled: false,
     },
     subtitle: {
       text: `2 weeks: ${currencyFrom.value} / ${currencyTo.value}`,
       align: "right",
     },
 
-    // fill: {
-    //   type: "solid",
-    // },
     colors: ["#F28705"],
-    dataLabels: {
-      enabled: false,
-    },
+
     stroke: {
       curve: "smooth",
       width: 3,
@@ -98,11 +85,6 @@ const Charts = () => {
       },
       type: "category",
       categories: Object.keys(result).sort(),
-    },
-    tooltip: {
-      x: {
-        format: "yyyy/mm/dd",
-      },
     },
   };
 
@@ -128,18 +110,15 @@ const Charts = () => {
       <Button type="submit" secondary margin>
         <Checkmark smaller />
       </Button>
-      <Chart
-        options={options}
-        series={series}
-        type="line"
-        height="58%"
-        width="95%"
-      />
-      {/* {Object.keys(result)
-        .sort()
-        .map((date) => (
-          <p>{date}</p>
-        ))} */}
+      <ChartWrapper>
+        <Chart
+          options={options}
+          series={series}
+          type="line"
+          height="94%"
+          width="95%"
+        />
+      </ChartWrapper>
     </Container>
   );
 };

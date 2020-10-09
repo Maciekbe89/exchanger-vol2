@@ -10,3 +10,11 @@ export const Container = styled.form`
   /* margin: 0 25px; */
   /* overflow: hidden; */
 `;
+
+export const ChartWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+`;
