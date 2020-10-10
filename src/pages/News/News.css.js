@@ -5,16 +5,42 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   height: 75vh;
+
+  .rec.rec-arrow,
+  .rec-dot {
+    background-color: ${({theme}) => theme.color.orange.normal};
+  }
+  .rec.rec-arrow {
+    min-width: 40px;
+    height: 40px;
+    line-height: 40px;
+  }
+  .rec-dot {
+    box-shadow: none;
+  }
+  .rec.rec-arrow-right {
+    margin-right: 10px;
+  }
+  .rec.rec-arrow-left {
+    margin-left: 10px;
+  }
+
+  .rec.rec-arrow:disabled {
+    opacity: 0;
+  }
+  .rec.rec-dot_active {
+    box-shadow: 0 0 1px 3px #fff;
+  }
 `;
 
 export const ArticleWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  margin: 0 25px;
+  justify-content: space-evenly;
+  /* margin: 0 25px; */
   height: 75vh;
-  padding-top: 15px;
+  padding-top: 25px;
 `;
 
 export const Title = styled.h1`

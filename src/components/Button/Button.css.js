@@ -50,9 +50,11 @@ export const ButtonCta = styled.button`
      ${({readMore}) =>
     readMore &&
     css`
-      width: 30%;
-      height: 8%;
+      width: auto;
+      height: auto;
+      padding: 8px 15px;
       border-radius: 5px;
+      color: ${({theme}) => theme.color.blue.dark};
       background-color: ${({theme}) => theme.color.orange.normal};
       font-size: 14px;
       margin: 0;
