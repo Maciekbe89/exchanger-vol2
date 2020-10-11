@@ -47,16 +47,14 @@ export const ButtonCta = styled.button`
       margin: 0 25px;
       width: auto;
     `}
-     ${({readMore}) =>
-    readMore &&
-    css`
-      width: auto;
-      height: auto;
-      padding: 8px 15px;
-      border-radius: 5px;
-      color: ${({theme}) => theme.color.blue.dark};
-      background-color: ${({theme}) => theme.color.orange.normal};
-      font-size: 14px;
-      margin: 0;
-    `}
+`;
+
+export const ButtonLink = styled.a`
+  padding: 8px 15px;
+  border-radius: 5px;
+  color: ${({theme}) => theme.color.blue.dark};
+  background-color: ${({theme}) => theme.color.orange.normal};
+  font-size: 14px;
+  margin: 0;
+  text-decoration: none;
 `;

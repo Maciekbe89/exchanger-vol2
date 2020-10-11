@@ -23,10 +23,12 @@ const News = () => {
         items.map((item) => {
           return {
             title: item.children[0].textContent,
+            link: item.children[2].textContent,
+            // image: item.children[6].attributes[1].nodeValue,
           };
         })
       );
-      // console.log(items);
+      console.log(items);
     };
     fetchData();
   }, [API]);
@@ -34,8 +36,14 @@ const News = () => {
   return (
     <Container>
       <Carousel>
-        {result.map(({title}) => (
-          <Title>{title}</Title>
+        {result.map(({title, image, link}) => (
+          <ArticleWrapper>
+            <Title>{title}</Title>
+            <Button readMore link={link}>
+              read more
+            </Button>
+            {/* <Image src={image} /> */}
+          </ArticleWrapper>
         ))}
         {/* <ArticleWrapper>
           <Title>5 Financial Things to Consider Before Quitting</Title>

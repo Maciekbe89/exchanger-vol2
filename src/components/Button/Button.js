@@ -1,11 +1,19 @@
 import React from "react";
-import {ButtonCta} from "./Button.css";
+import {ButtonCta, ButtonLink} from "./Button.css";
 
-const Button = ({type, children, onClick, ...props}) => {
+const Button = ({link, type, children, onClick, ...props}) => {
   return (
-    <ButtonCta {...props} onClick={onClick} type={type}>
-      {children}
-    </ButtonCta>
+    <>
+      {link ? (
+        <ButtonLink href={link} target="_blank" rel="noopener noreferrer">
+          {children}
+        </ButtonLink>
+      ) : (
+        <ButtonCta {...props} onClick={onClick} type={type}>
+          {children}
+        </ButtonCta>
+      )}
+    </>
   );
 };
 
