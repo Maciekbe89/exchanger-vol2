@@ -52,7 +52,7 @@ export const Title = styled.h1`
 
 export const Image = styled.img`
   width: 100%;
-  height: auto;
+  height: 30%;
 `;
 
 export const Description = styled.p`

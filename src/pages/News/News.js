@@ -18,9 +18,8 @@ const News = () => {
       const parser = new DOMParser();
       const doc = parser.parseFromString(content, "text/xml");
       const items = Array.from(doc.querySelectorAll("item"));
-      console.log(items.length);
       setResult(
-        items.map((item) => {
+        items.slice(15).map((item) => {
           return {
             title: item.children[0].textContent,
             description: item.children[1].textContent
@@ -32,7 +31,7 @@ const News = () => {
           };
         })
       );
-      console.log(items);
+      console.log(items.length);
     };
     fetchData();
   }, [API]);
