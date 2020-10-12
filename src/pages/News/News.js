@@ -23,8 +23,12 @@ const News = () => {
         items.map((item) => {
           return {
             title: item.children[0].textContent,
+            description: item.children[1].textContent
+              .split('"><div>')[1]
+              .replace("</div></div>", ""),
+
             link: item.children[2].textContent,
-            // image: item.children[6].attributes[1].nodeValue,
+            image: item.children[6].getAttribute("url"),
           };
         })
       );
@@ -36,13 +40,12 @@ const News = () => {
   return (
     <Container>
       <Carousel>
-        {result.map(({title, image, link}) => (
+        {result.map(({title, description, link, image}) => (
           <ArticleWrapper>
             <Title>{title}</Title>
-            <Button readMore link={link}>
-              read more
-            </Button>
-            {/* <Image src={image} /> */}
+            <Image src={image} />
+            <Description>{description}</Description>
+            <Button link={link}>read more</Button>
           </ArticleWrapper>
         ))}
         {/* <ArticleWrapper>

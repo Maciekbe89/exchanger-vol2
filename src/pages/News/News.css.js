@@ -45,7 +45,7 @@ export const ArticleWrapper = styled.div`
 
 export const Title = styled.h1`
   color: white;
-  font-size: 20px;
+  font-size: 16px;
   margin: 0;
   text-align: center;
 `;
@@ -58,5 +58,5 @@ export const Image = styled.img`
 export const Description = styled.p`
   font-size: 14px;
   color: white;
-  text-align: justify;
+  /* text-align: justify; */
 `;
