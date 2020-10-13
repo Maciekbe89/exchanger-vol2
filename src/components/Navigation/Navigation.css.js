@@ -13,7 +13,7 @@ export const Link = styled(NavLink)`
   opacity: 0.4;
   color: #fff;
   text-decoration: none;
-  padding: 10px;
+  padding: 0.625em;
   outline: none;
   -webkit-tap-highlight-color: transparent;
   &.active {
@@ -35,7 +35,7 @@ export const Logo = styled.img`
 `;
 
 export const Title = styled.h1`
-  font-size: 16px;
+  font-size: 1em;
   margin: auto;
   color: #fff;
 `;

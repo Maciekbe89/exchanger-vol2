@@ -31,6 +31,9 @@ export const Container = styled.div`
   .rec.rec-dot_active {
     box-shadow: 0 0 1px 3px #fff;
   }
+  .rec.rec-arrow:hover {
+    background-color: none;
+  }
 `;
 
 export const ArticleWrapper = styled.div`
@@ -41,6 +44,7 @@ export const ArticleWrapper = styled.div`
   /* margin: 0 25px; */
   height: 75vh;
   padding-top: 25px;
+  outline: none;
 `;
 
 export const Title = styled.h1`

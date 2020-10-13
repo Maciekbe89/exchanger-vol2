@@ -40,7 +40,7 @@ export const Main = styled.div`
 export const BottomCta = styled(Main)`
   border-radius: 25% 25% 0 0;
   background-color: #fff;
-  font-size: 24px;
+  font-size: 1.75em;
 `;
 
 export const Icons = styled.img`
@@ -52,31 +52,31 @@ export const Icons = styled.img`
 `;
 
 export const DollarIcon = styled(Icons)`
-  height: 70px;
+  height: 4.375em;
   top: 4%;
 `;
 export const EuroIcon = styled(Icons)`
-  height: 50px;
+  height: 3.125em;
   top: 70%;
   animation-delay: 1s;
 `;
 export const PoundIcon = styled(Icons)`
-  height: 40px;
+  height: 2.5em;
   top: 30%;
   animation-delay: 1.5s;
 `;
 export const ShekelIcon = styled(Icons)`
-  height: 25px;
+  height: 1.563em;
   top: 52%;
   animation-name: ${rotateReverse};
 `;
 export const WonIcon = styled(Icons)`
-  height: 45px;
+  height: 2.813em;
   top: 15%;
   animation-delay: 3s;
 `;
 export const YenIcon = styled(Icons)`
-  height: 50px;
+  height: 3.125em;
   top: 60%;
   animation-name: ${rotateReverse};
   animation-delay: 3s;
