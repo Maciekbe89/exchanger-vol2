@@ -54,12 +54,13 @@ const SelectMenu = ({label, value, setCurrency, ...props}) => {
     menu: (provided) => ({
       ...provided,
       width: "67vw",
-      fontSize: "12px",
+      fontSize: "0.75em",
     }),
     control: (provided) => ({
       ...provided,
       width: "67vw",
       height: 100 + "%",
+      fontSize: "1em",
     }),
   };
 

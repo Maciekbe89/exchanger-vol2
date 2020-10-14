@@ -3,7 +3,7 @@ import {normalize} from "styled-normalize";
 import {CalculatorFill} from "@styled-icons/bootstrap/CalculatorFill";
 import {ChartLine} from "@styled-icons/fa-solid/ChartLine";
 import {Newspaper} from "@styled-icons/ionicons-sharp/Newspaper";
-
+import {device} from "./utils";
 import Oswald from "./assets/font/Oswald-Regular.ttf";
 
 export default createGlobalStyle`
@@ -22,9 +22,24 @@ ${normalize}
  
 }
 
+
 body {
   font-family: "Oswald", sans-serif;
-  background-color: ${({theme}) => theme.color.blue.dark}
+  background-color: ${({theme}) => theme.color.blue.dark};
+
+ @media ${device.mobileMedium} {
+   font-size: 18px;
+ }
+ @media ${device.mobileLarge} {
+   font-size: 20px;
+ }
+ @media ${device.tabletMedium} {
+   font-size: 28px;
+ }
+ @media ${device.tabletLarge} {
+   font-size: 38px;
+ }
+
 }
 
 
@@ -32,13 +47,10 @@ body {
 
 export const CalcIcon = styled(CalculatorFill)`
   height: 1.75em;
-  /* color: white; */
 `;
 export const ChartIcon = styled(ChartLine)`
   height: 1.75em;
-  /* color: white; */
 `;
 export const NewsIcon = styled(Newspaper)`
   height: 1.75em;
-  /* color: white; */
 `;

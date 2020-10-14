@@ -6,23 +6,29 @@ export const Container = styled.div`
   justify-content: center;
   height: 75vh;
 
+  .rec-carousel {
+    height: 70vh;
+  }
   .rec.rec-arrow,
   .rec-dot {
     background-color: ${({theme}) => theme.color.orange.normal};
   }
   .rec.rec-arrow {
-    min-width: 40px;
-    height: 40px;
-    line-height: 40px;
+    min-width: 1.7em;
+    height: 1.7em;
+    line-height: 1.7em;
+    font-size: 1.5em;
   }
   .rec-dot {
     box-shadow: none;
+    height: 0.481em;
+    width: 0.481em;
   }
   .rec.rec-arrow-right {
-    margin-right: 10px;
+    margin-right: 0.416em;
   }
   .rec.rec-arrow-left {
-    margin-left: 10px;
+    margin-left: 0.416em;
   }
 
   .rec.rec-arrow:disabled {
@@ -32,7 +38,10 @@ export const Container = styled.div`
     box-shadow: 0 0 1px 3px #fff;
   }
   .rec.rec-arrow:hover {
-    background-color: none;
+    background-color: ${({theme}) => theme.color.orange.normal};
+  }
+  .rec-pagination {
+    margin: 0;
   }
 `;
 
@@ -41,15 +50,13 @@ export const ArticleWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  /* margin: 0 25px; */
   height: 75vh;
-  padding-top: 25px;
   outline: none;
 `;
 
 export const Title = styled.h1`
   color: white;
-  font-size: 16px;
+  font-size: 1em;
   margin: 0;
   text-align: center;
 `;
@@ -60,7 +67,6 @@ export const Image = styled.img`
 `;
 
 export const Description = styled.p`
-  font-size: 14px;
+  font-size: 0.875em;
   color: white;
-  /* text-align: justify; */
 `;

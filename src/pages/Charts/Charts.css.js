@@ -17,4 +17,8 @@ export const ChartWrapper = styled.div`
   justify-content: center;
   width: 100%;
   height: 100%;
+
+  .apexcharts-text {
+    font-size: 0.8em;
+  }
 `;

@@ -30,7 +30,7 @@ export const TitleCta = styled.div`
 `;
 
 export const Logo = styled.img`
-  height: 80%;
+  width: 70%;
   margin: auto;
 `;
 
@@ -38,4 +38,5 @@ export const Title = styled.h1`
   font-size: 1em;
   margin: auto;
   color: #fff;
+  letter-spacing: 1px;
 `;

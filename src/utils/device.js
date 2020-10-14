@@ -7,7 +7,7 @@ const size = {
 
 export const device = {
   mobileMedium: `(orientation: portrait) and (min-width: ${size.mobileMedium})`,
-  mobileMedium: `(orientation: portrait) and (min-width: ${size.mobileLarge})`,
-  mobileMedium: `(orientation: portrait) and (min-width: ${size.tabletMedium})`,
-  mobileMedium: `(orientation: portrait) and (min-width: ${size.tabletLarge})`,
+  mobileLarge: `(orientation: portrait) and (min-width: ${size.mobileLarge})`,
+  tabletMedium: `(orientation: portrait) and (min-width: ${size.tabletMedium})`,
+  tabletLarge: `(orientation: portrait) and (min-width: ${size.tabletLarge})`,
 };

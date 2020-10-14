@@ -77,7 +77,7 @@ const Calculator = () => {
               }).format(resultAmount) + " ="
             : ""}
         </AmountResult>
-        <TotalResult fontSize={50}>
+        <TotalResult>
           {result
             ? new Intl.NumberFormat(`${currencyFormat[currencyTo.value]}`, {
                 style: "currency",

@@ -8,11 +8,11 @@ export const Form = styled.form`
   max-width: 100%;
   height: 75vh;
   background-color: ${({theme}) => theme.color.blue.dark};
-  margin: 0 25px;
+  margin: 0 1.565em;
 `;
 
 export const Checkmark = styled(Check)`
-  width: ${({smaller}) => (smaller ? "30px" : "40px")};
+  width: ${({smaller}) => (smaller ? "1.875em" : "2.5em")};
   color: ${({theme}) => theme.color.blue.dark};
 `;
 
@@ -22,7 +22,7 @@ export const Result = styled.div`
   align-items: center;
   color: white;
   height: 100%;
-  min-width: 100px;
+  min-width: 6.25em;
 `;
 
 export const AmountResult = styled.p`
@@ -36,5 +36,5 @@ export const TotalResult = styled.p`
   overflow: hidden;
   word-wrap: break-word;
   text-align: center;
-  font-size: ${(props) => props.fontSize}px;
+  font-size: 3.125em;
 `;

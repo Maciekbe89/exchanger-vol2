@@ -18,7 +18,7 @@ const flip = keyframes`
 `;
 
 export const Dollar = styled(CurrencyDollar)`
-  height: 45px;
+  height: 2.815em;
   color: white;
   animation: ${flip} 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
 `;

@@ -58,7 +58,8 @@ const Charts = () => {
       toolbar: {
         show: false,
       },
-      height: 300,
+      // height: "100",
+      // width: 1400,
       type: "line",
     },
     dataLabels: {
@@ -67,6 +68,9 @@ const Charts = () => {
     subtitle: {
       text: `2 weeks: ${currencyFrom.value} / ${currencyTo.value}`,
       align: "right",
+      style: {
+        fontSize: "0.8em",
+      },
     },
 
     colors: ["#F28705"],
@@ -88,11 +92,6 @@ const Charts = () => {
     },
   };
 
-  // currency value
-  // {
-  //   result[date][currencyTo.value];
-  // }
-
   return (
     <Container onSubmit={onSubmit}>
       <SelectMenu
@@ -112,11 +111,13 @@ const Charts = () => {
       </Button>
       <ChartWrapper>
         <Chart
+          style={{width: "90%"}}
           options={options}
           series={series}
           type="line"
-          height="94%"
-          width="95%"
+          height="90%"
+          // fontSize="20px"
+          // // width="100%"
         />
       </ChartWrapper>
     </Container>

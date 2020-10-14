@@ -1,9 +1,12 @@
 import styled from "styled-components";
 
 export const InputAmount = styled.input`
-  /* width: 80vw; */
   height: 70%;
-  border-radius: 5px;
+  border-radius: 0.315em;
   border: none;
-  padding-left: 10px;
+  padding-left: 0.625em;
+  &::placeholder {
+    font-size: 1em;
+    letter-spacing: 1px;
+  }
 `;

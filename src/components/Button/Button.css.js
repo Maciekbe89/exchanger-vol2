@@ -774,6 +774,7 @@ export const ButtonCta = styled.button`
   border: none;
   background-color: transparent;
   margin: auto;
+  outline: none;
 
   ${({primary}) =>
     primary &&
@@ -784,22 +785,22 @@ export const ButtonCta = styled.button`
     secondary &&
     css`
       background-color: ${({theme}) => theme.color.orange.normal};
-      border-radius: 5px;
+      border-radius: 0.315em;
     `}
   ${({margin}) =>
     margin &&
     css`
-      margin: 0 25px;
+      margin: 0 1.562em;
       width: auto;
     `}
 `;
 
 export const ButtonLink = styled.a`
-  padding: 8px 15px;
-  border-radius: 5px;
+  padding: 0.5em 1em;
+  border-radius: 0.315em;
   color: ${({theme}) => theme.color.blue.dark};
   background-color: ${({theme}) => theme.color.orange.normal};
-  font-size: 14px;
+  font-size: 0.875em;
   margin: 0;
   text-decoration: none;
 

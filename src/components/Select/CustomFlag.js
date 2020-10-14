@@ -8,10 +8,10 @@ const CustomFlag = (props) => (
       src={props.data.icon}
       alt="flag"
       style={{
-        width: "25px",
-        height: "15px",
+        width: "1.563em",
+        height: "1em",
         borderRadius: "30%",
-        marginRight: "15px",
+        marginRight: "1em",
       }}
     />
     <span>{props.data.label}</span>
