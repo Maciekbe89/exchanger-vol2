@@ -1,4 +1,4 @@
-import styled, {keyframes} from "styled-components";
+import styled, {keyframes, css} from "styled-components";
 
 const rotate = keyframes`
 from {
@@ -46,38 +46,12 @@ export const BottomCta = styled(Main)`
 export const Icons = styled.img`
   position: absolute;
   left: -16%;
+  height: ${({height}) => height};
+  top: ${({top}) => top};
   z-index: 2;
   opacity: 0.25;
   animation: ${rotate} 4.5s linear infinite;
-`;
-
-export const DollarIcon = styled(Icons)`
-  height: 4.375em;
-  top: 4%;
-`;
-export const EuroIcon = styled(Icons)`
-  height: 3.125em;
-  top: 70%;
-  animation-delay: 1s;
-`;
-export const PoundIcon = styled(Icons)`
-  height: 2.5em;
-  top: 30%;
-  animation-delay: 1.5s;
-`;
-export const ShekelIcon = styled(Icons)`
-  height: 1.563em;
-  top: 52%;
-  animation-name: ${rotateReverse};
-`;
-export const WonIcon = styled(Icons)`
-  height: 2.813em;
-  top: 15%;
-  animation-delay: 3s;
-`;
-export const YenIcon = styled(Icons)`
-  height: 3.125em;
-  top: 60%;
-  animation-name: ${rotateReverse};
-  animation-delay: 3s;
+  animation-delay: ${({delay}) => delay};
+  animation-name: ${({animationName}) =>
+    animationName === "reverse" ? rotateReverse : ""};
 `;
