@@ -1,4 +1,4 @@
-import styled, {keyframes, css} from "styled-components";
+import styled, {keyframes} from "styled-components";
 
 const rotate = keyframes`
 from {
@@ -37,6 +37,11 @@ export const Main = styled.div`
   height: 100%;
 `;
 
+export const MainLogo = styled.img`
+  width: 60%;
+  z-index: 1;
+`;
+
 export const BottomCta = styled(Main)`
   border-radius: 25% 25% 0 0;
   background-color: #fff;
@@ -48,7 +53,6 @@ export const Icons = styled.img`
   left: -16%;
   height: ${({height}) => height};
   top: ${({top}) => top};
-  z-index: 2;
   opacity: 0.25;
   animation: ${rotate} 4.5s linear infinite;
   animation-delay: ${({delay}) => delay};

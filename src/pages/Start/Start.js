@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../../assets/logo.png";
-import {StartContainer, Main, BottomCta, Icons} from "./Start.css";
+import {StartContainer, Main, BottomCta, Icons, MainLogo} from "./Start.css";
 import {Button} from "../../components";
 import Dollar from "../../assets/svg/dollar.svg";
 import Euro from "../../assets/svg/euro.svg";
@@ -58,10 +58,11 @@ const Start = ({getStart}) => {
   return (
     <StartContainer>
       <Main>
-        <img src={logo} alt="logo" />
+        <MainLogo src={logo} alt="logo" />
         {CurrenciesSign.map(
           ({image, name, height, top, delay, animationName}) => (
             <Icons
+              key={name}
               delay={delay}
               height={height}
               top={top}
