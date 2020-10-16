@@ -14,4 +14,5 @@ export const ErrorIcon = styled(Error)`
 
 export const Text = styled.p`
   font-size: 1.2em;
+  color: #fff;
 `;

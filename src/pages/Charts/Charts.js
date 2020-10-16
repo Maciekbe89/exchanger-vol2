@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import Chart from "react-apexcharts";
-import {SelectMenu, Button} from "../../components";
+import {SelectMenu, Button, Error} from "../../components";
 import {Checkmark} from "../Calculator/Calculator.css";
 import {Container, ChartWrapper} from "./Charts.css";
 import PL from "../../assets/flags/pl.png";
@@ -8,6 +8,8 @@ import US from "../../assets/flags/us.png";
 
 const Charts = () => {
   const [result, setResult] = useState("");
+  const [hasErrors, setHasErrors] = useState(false);
+
   const [currencyFrom, setCurrencyFrom] = useState({
     value: "PLN",
     label: "PLN - Polish Zloty",
@@ -31,17 +33,16 @@ const Charts = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    fetch(API)
-      .then((response) => {
-        if (response.ok) {
-          return response;
-        }
-        throw Error("nie udało się");
-      })
-      .then((response) => response.json())
-      .then((data) => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(API);
+        const data = await response.json();
         setResult(data.rates);
-      });
+      } catch (e) {
+        setHasErrors(true);
+      }
+    };
+    fetchData();
   };
 
   const series = [
@@ -58,8 +59,6 @@ const Charts = () => {
       toolbar: {
         show: false,
       },
-      // height: "100",
-      // width: 1400,
       type: "line",
     },
     dataLabels: {
@@ -72,14 +71,11 @@ const Charts = () => {
         fontSize: "0.8em",
       },
     },
-
     colors: ["#F28705"],
-
     stroke: {
       curve: "smooth",
       width: 3,
     },
-
     xaxis: {
       labels: {
         show: false,
@@ -110,15 +106,16 @@ const Charts = () => {
         <Checkmark smaller />
       </Button>
       <ChartWrapper>
-        <Chart
-          style={{width: "90%"}}
-          options={options}
-          series={series}
-          type="line"
-          height="90%"
-          // fontSize="20px"
-          // // width="100%"
-        />
+        {hasErrors ? (
+          <Error />
+        ) : (
+          <Chart
+            style={{width: "90%"}}
+            options={options}
+            series={series}
+            height="90%"
+          />
+        )}
       </ChartWrapper>
     </Container>
   );

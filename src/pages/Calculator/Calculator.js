@@ -40,18 +40,6 @@ const Calculator = () => {
         setHasErrors(true);
       }
     };
-
-    // fetch(API)
-    //   .then((response) => {
-    //     if (response.ok) {
-    //       return response;
-    //     }
-    //     throw Error("nie udało sie");
-    //   })
-    //   .then((response) => response.json())
-    //   .then((data) => {
-    //     setResult(amount * data.rates[currencyTo.value]);
-    //   });
     fetchData();
     setResultAmount(amount);
     setAmount(e.target.reset());
