@@ -1,12 +1,12 @@
 import React from "react";
-import {ErrorIcon, Text} from "./Error.css";
+import {ErrorIcon, Text, Container} from "./Error.css";
 
 const Error = () => {
   return (
-    <div>
+    <Container>
       <ErrorIcon />
       <Text>something wrong :(</Text>
-    </div>
+    </Container>
   );
 };
 

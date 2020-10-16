@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {SelectMenu, Input, Button} from "../../components";
+import {SelectMenu, Input, Button, Error} from "../../components";
 import {
   Form,
   Checkmark,
@@ -14,6 +14,7 @@ import EU from "../../assets/flags/eu.png";
 const Calculator = () => {
   const [amount, setAmount] = useState(0);
   const [result, setResult] = useState(0);
+  const [hasErrors, setHasErrors] = useState(false);
   const [resultAmount, setResultAmount] = useState(0);
   const [currencyFrom, setCurrencyFrom] = useState({
     value: "PLN",
@@ -30,30 +31,31 @@ const Calculator = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    fetch(API)
-      .then((response) => {
-        if (response.ok) {
-          return response;
-        }
-        throw Error("nie udało sie");
-      })
-      .then((response) => response.json())
-      .then((data) => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(API);
+        const data = await response.json();
         setResult(amount * data.rates[currencyTo.value]);
-      });
+      } catch (e) {
+        setHasErrors(true);
+      }
+    };
+
+    // fetch(API)
+    //   .then((response) => {
+    //     if (response.ok) {
+    //       return response;
+    //     }
+    //     throw Error("nie udało sie");
+    //   })
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     setResult(amount * data.rates[currencyTo.value]);
+    //   });
+    fetchData();
     setResultAmount(amount);
     setAmount(e.target.reset());
   };
-
-  // const smallerFont = () => {
-  //   if (result.toString().length <= 5) {
-  //     return "70";
-  //   } else if (result.toString().length < 10 && result.toString().length > 5) {
-  //     return "40";
-  //   } else {
-  //     return "20";
-  //   }
-  // };
 
   return (
     <Form onSubmit={onSubmit}>
@@ -77,14 +79,18 @@ const Calculator = () => {
               }).format(resultAmount) + " ="
             : ""}
         </AmountResult>
-        <TotalResult>
-          {result
-            ? new Intl.NumberFormat(`${currencyFormat[currencyTo.value]}`, {
-                style: "currency",
-                currency: `${currencyTo.value}`,
-              }).format(result.toFixed(2))
-            : null}
-        </TotalResult>
+        {hasErrors ? (
+          <Error />
+        ) : (
+          <TotalResult>
+            {result
+              ? new Intl.NumberFormat(`${currencyFormat[currencyTo.value]}`, {
+                  style: "currency",
+                  currency: `${currencyTo.value}`,
+                }).format(result.toFixed(2))
+              : null}
+          </TotalResult>
+        )}
       </Result>
     </Form>
   );
