@@ -7,8 +7,6 @@ export const Container = styled.form`
   background-color: ${({theme}) => theme.color.blue.dark};
   align-items: center;
   overflow: hidden;
-  /* margin: 0 25px; */
-  /* overflow: hidden; */
 `;
 
 export const ChartWrapper = styled.div`
@@ -20,5 +18,11 @@ export const ChartWrapper = styled.div`
 
   .apexcharts-text {
     font-size: 0.8em;
+  }
+  .apexcharts-xaxistooltip-bottom {
+    display: none;
+  }
+  .apexcharts-tooltip {
+    font-size: 1em;
   }
 `;

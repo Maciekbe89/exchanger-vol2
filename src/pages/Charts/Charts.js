@@ -76,6 +76,14 @@ const Charts = () => {
       curve: "smooth",
       width: 3,
     },
+    tooltip: {
+      style: {
+        fontSize: "1em",
+      },
+      z: {
+        show: false,
+      },
+    },
     xaxis: {
       labels: {
         show: false,
