@@ -3,6 +3,9 @@ const size = {
   mobileLarge: "411px",
   tabletMedium: "760px",
   tabletLarge: "1000px",
+  webSmall: "800px",
+  webMedium: "1200px",
+  webLarge: "1440px",
 };
 
 export const device = {
@@ -10,4 +13,5 @@ export const device = {
   mobileLarge: `(orientation: portrait) and (min-width: ${size.mobileLarge})`,
   tabletMedium: `(orientation: portrait) and (min-width: ${size.tabletMedium})`,
   tabletLarge: `(orientation: portrait) and (min-width: ${size.tabletLarge})`,
+  webSmall: `(orientation: landscape) and (min-width: ${size.webSmall})`,
 };

@@ -47,10 +47,19 @@ body {
 
 export const CalcIcon = styled(CalculatorFill)`
   height: 1.75em;
+  @media ${device.webSmall} {
+    height: 2.5em;
+  }
 `;
 export const ChartIcon = styled(ChartLine)`
   height: 1.75em;
+  @media ${device.webSmall} {
+    height: 2.5em;
+  }
 `;
 export const NewsIcon = styled(Newspaper)`
   height: 1.75em;
+  @media ${device.webSmall} {
+    height: 2.5em;
+  }
 `;

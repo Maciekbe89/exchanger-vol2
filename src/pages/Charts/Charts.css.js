@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import {device} from "../../utils";
 export const Container = styled.form`
   display: grid;
   grid-template-rows: repeat(3, 1fr) 5fr;
@@ -7,6 +7,10 @@ export const Container = styled.form`
   background-color: ${({theme}) => theme.color.blue.dark};
   align-items: center;
   overflow: hidden;
+
+  @media ${device.webSmall} {
+    grid-template-columns: 1fr 1fr;
+  }
 `;
 
 export const ChartWrapper = styled.div`
