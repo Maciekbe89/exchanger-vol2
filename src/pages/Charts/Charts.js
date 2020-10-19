@@ -103,14 +103,18 @@ const Charts = () => {
         label="From:"
         value={currencyFrom}
         setCurrency={setCurrencyFrom}
+        position="1/3"
+        height="38.5%"
       />
       <SelectMenu
         margin
         label="To:"
         value={currencyTo}
         setCurrency={setCurrencyTo}
+        position="2/4"
+        height="38.5%"
       />
-      <Button type="submit" secondary margin>
+      <Button type="submit" secondary margin row>
         <Checkmark smaller />
       </Button>
       <ChartWrapper>

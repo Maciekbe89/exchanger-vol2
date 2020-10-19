@@ -52,12 +52,15 @@ const Calculator = () => {
         label="From:"
         value={currencyFrom}
         setCurrency={setCurrencyFrom}
+        position="2/4"
+        height="38.5%"
       />
       <SelectMenu
         label="To:"
         value={currencyTo}
         setCurrency={setCurrencyTo}
-        position
+        position="3/5"
+        height="38.5%"
       />
       <Button type="submit" secondary>
         <Checkmark />

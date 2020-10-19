@@ -39,6 +39,21 @@ body {
  @media ${device.tabletLarge} {
    font-size: 38px;
  }
+ @media ${device.webSmall} {
+   font-size: 16px;
+ }
+ @media ${device.webMedium} {
+   font-size: 18px;
+ }
+ @media ${device.webLarge} {
+   font-size: 20px;
+ }
+ @media ${device.webXLarge} {
+   font-size: 22px;
+ }
+ @media ${device.webXXLarge} {
+   font-size: 24px;
+ }
 
 }
 

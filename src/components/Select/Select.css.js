@@ -7,9 +7,9 @@ export const Container = styled.div`
   justify-content: space-between;
 
   @media ${device.webSmall} {
-    height: 38.5%;
+    height: ${({height}) => height};
     grid-column: 1/2;
-    grid-row: ${({position}) => (position ? "3/5" : "2/4")};
+    grid-row: ${({position}) => position};
     margin-right: 1.565em;
   }
 

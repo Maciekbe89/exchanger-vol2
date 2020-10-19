@@ -30,11 +30,11 @@ export const ButtonCta = styled.button`
   background-color: transparent;
   margin: auto;
   outline: none;
+  cursor: pointer;
 
   @media ${device.webSmall} {
     grid-column: 2/3;
     grid-row: 1/5;
-    /* margin: 1em 1em 1em 0; */
   }
 
   ${({primary}) =>
@@ -53,6 +53,15 @@ export const ButtonCta = styled.button`
     css`
       margin: 0 1.562em;
       width: auto;
+    `}
+  ${({row}) =>
+    row &&
+    css`
+      @media ${device.webSmall} {
+        grid-row: 1/4;
+        height: 60%;
+        margin-left: 0;
+      }
     `}
 `;
 

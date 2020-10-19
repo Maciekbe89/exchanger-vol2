@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {device} from "../../utils";
 import {NavLink} from "react-router-dom";
 
 export const NavWrapper = styled.nav`
@@ -39,4 +40,7 @@ export const Title = styled.h1`
   margin: auto;
   color: #fff;
   letter-spacing: 1px;
+  @media ${device.webSmall} {
+    font-size: 1.5em;
+  }
 `;

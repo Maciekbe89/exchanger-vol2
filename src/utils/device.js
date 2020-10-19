@@ -6,6 +6,8 @@ const size = {
   webSmall: "800px",
   webMedium: "1200px",
   webLarge: "1440px",
+  webXLarge: "1650px",
+  webXXLarge: "1920px",
 };
 
 export const device = {
@@ -14,4 +16,8 @@ export const device = {
   tabletMedium: `(orientation: portrait) and (min-width: ${size.tabletMedium})`,
   tabletLarge: `(orientation: portrait) and (min-width: ${size.tabletLarge})`,
   webSmall: `(orientation: landscape) and (min-width: ${size.webSmall})`,
+  webMedium: `(orientation: landscape) and (min-width: ${size.webMedium})`,
+  webLarge: `(orientation: landscape) and (min-width: ${size.webLarge})`,
+  webXLarge: `(orientation: landscape) and (min-width: ${size.webXLarge})`,
+  webXXLarge: `(orientation: landscape) and (min-width: ${size.webXXLarge})`,
 };

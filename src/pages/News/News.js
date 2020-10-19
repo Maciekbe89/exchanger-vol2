@@ -18,6 +18,7 @@ const News = () => {
         const parser = new DOMParser();
         const doc = parser.parseFromString(content, "text/xml");
         const items = Array.from(doc.querySelectorAll("item"));
+        console.log(items);
         setResult(
           items.slice(15).map((item) => {
             return {
