@@ -60,6 +60,9 @@ const Charts = () => {
         show: false,
       },
       type: "line",
+      zoom: {
+        enabled: false,
+      },
     },
     dataLabels: {
       enabled: false,
@@ -84,6 +87,7 @@ const Charts = () => {
         show: false,
       },
     },
+
     xaxis: {
       labels: {
         show: false,
