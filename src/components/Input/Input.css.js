@@ -7,7 +7,7 @@ export const InputAmount = styled.input`
   border: none;
   padding-left: 0.625em;
 
-  @media ${device.webSmall} {
+  @media ${device.webSmall}, ${device.mobileLandscape} {
     height: 38.5%;
     grid-row: 1/3;
     grid-column: 1/2;

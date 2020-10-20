@@ -11,7 +11,7 @@ export const Form = styled.form`
   background-color: ${({theme}) => theme.color.blue.dark};
   margin: 0 1.565em;
 
-  @media ${device.webSmall} {
+  @media ${device.webSmall}, ${device.mobileLandscape} {
     grid-template-columns: 1fr 1fr;
   }
 `;
@@ -31,7 +31,7 @@ export const Result = styled.div`
   color: white;
   height: 100%;
   min-width: 6.25em;
-  @media ${device.webSmall} {
+  @media ${device.webSmall}, ${device.mobileLandscape} {
     grid-column: 1/-1;
   }
 `;

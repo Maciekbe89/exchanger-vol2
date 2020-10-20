@@ -41,6 +41,9 @@ export const Main = styled.div`
 export const MainLogo = styled.img`
   width: 60%;
   z-index: 1;
+  @media ${device.mobileLandscape} {
+    width: 30%;
+  }
   @media ${device.webSmall} {
     width: 20%;
   }
@@ -50,6 +53,7 @@ export const BottomCta = styled(Main)`
   border-radius: 25% 25% 0 0;
   background-color: #fff;
   font-size: 1.75em;
+  z-index: 2;
 `;
 
 export const Icons = styled.img`
@@ -62,6 +66,9 @@ export const Icons = styled.img`
   animation-delay: ${({delay}) => delay};
   animation-name: ${({animationName}) =>
     animationName === "reverse" ? rotateReverse : ""};
+  @media ${device.mobileLandscape} {
+    animation-duration: 4s;
+  }
   @media ${device.webSmall} {
     animation-duration: 6s;
   }

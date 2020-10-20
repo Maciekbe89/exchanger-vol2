@@ -9,7 +9,7 @@ export const Container = styled.form`
   align-items: center;
   overflow: hidden;
 
-  @media ${device.webSmall} {
+  @media ${device.webSmall}, ${device.mobileLandscape} {
     grid-template-columns: 1fr 1fr;
   }
 `;
@@ -21,7 +21,7 @@ export const ChartWrapper = styled.div`
   width: 100%;
   height: 100%;
 
-  @media ${device.webSmall} {
+  @media ${device.webSmall}, ${device.mobileLandscape} {
     grid-column: 1/-1;
     grid-row: 4/-1;
   }

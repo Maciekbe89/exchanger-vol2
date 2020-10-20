@@ -32,7 +32,7 @@ export const ButtonCta = styled.button`
   outline: none;
   cursor: pointer;
 
-  @media ${device.webSmall} {
+  @media ${device.webSmall}, ${device.mobileLandscape} {
     grid-column: 2/3;
     grid-row: 1/5;
   }
@@ -57,7 +57,7 @@ export const ButtonCta = styled.button`
   ${({row}) =>
     row &&
     css`
-      @media ${device.webSmall} {
+      @media ${device.webSmall}, ${device.mobileLandscape} {
         grid-row: 1/4;
         height: 60%;
         margin-left: 0;

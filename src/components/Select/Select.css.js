@@ -6,7 +6,7 @@ export const Container = styled.div`
   height: 70%;
   justify-content: space-between;
 
-  @media ${device.webSmall} {
+  @media ${device.webSmall}, ${device.mobileLandscape} {
     height: ${({height}) => height};
     grid-column: 1/2;
     grid-row: ${({position}) => position};
@@ -23,7 +23,7 @@ export const Container = styled.div`
 export const Label = styled.label`
   color: white;
   font-size: 0.875em;
-  @media ${device.webSmall} {
+  @media ${device.webSmall}, ${device.mobileLandscape} {
     margin-right: 2em;
   }
 `;
