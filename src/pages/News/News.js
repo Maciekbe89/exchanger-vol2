@@ -49,7 +49,7 @@ const News = () => {
         <Error />
       ) : isLoading ? (
         <Loading />
-      ) : (
+      ) : result.length > 0 ? (
         <Carousel>
           {result.map(({title, description, link, image}) => (
             <ArticleWrapper key={title}>
@@ -60,6 +60,8 @@ const News = () => {
             </ArticleWrapper>
           ))}
         </Carousel>
+      ) : (
+        <Error />
       )}
     </Container>
   );
