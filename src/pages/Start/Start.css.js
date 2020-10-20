@@ -1,4 +1,5 @@
 import styled, {keyframes} from "styled-components";
+import {device} from "../../utils";
 
 const rotate = keyframes`
 from {
@@ -40,6 +41,9 @@ export const Main = styled.div`
 export const MainLogo = styled.img`
   width: 60%;
   z-index: 1;
+  @media ${device.webSmall} {
+    width: 20%;
+  }
 `;
 
 export const BottomCta = styled(Main)`
@@ -58,4 +62,7 @@ export const Icons = styled.img`
   animation-delay: ${({delay}) => delay};
   animation-name: ${({animationName}) =>
     animationName === "reverse" ? rotateReverse : ""};
+  @media ${device.webSmall} {
+    animation-duration: 6s;
+  }
 `;

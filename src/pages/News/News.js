@@ -1,17 +1,20 @@
 import React, {useEffect, useState} from "react";
 import {Container, ArticleWrapper, Title, Description, Image} from "./News.css";
-import {Button, Error} from "../../components";
+import {Button, Error, Loading} from "../../components";
 import Carousel from "react-elastic-carousel";
+import {FormatListNumbered} from "styled-icons/material";
 
 const News = () => {
   const [result, setResult] = useState([]);
   const [hasErrors, setHasErrors] = useState(false);
+  const [isLoading, setIsLoading] = useState(FormatListNumbered);
 
   const API = "https://rss.app/feeds/oNwptth2JLtqxDVx.xml";
 
   useEffect(() => {
     const fetchData = async () => {
       try {
+        setIsLoading(true);
         const buffer = await fetch(API);
         const content = await buffer.text();
 
@@ -32,6 +35,7 @@ const News = () => {
             };
           })
         );
+        setIsLoading(false);
       } catch (e) {
         setHasErrors(true);
       }
@@ -43,6 +47,8 @@ const News = () => {
     <Container>
       {hasErrors ? (
         <Error />
+      ) : isLoading ? (
+        <Loading />
       ) : (
         <Carousel>
           {result.map(({title, description, link, image}) => (
