@@ -3,6 +3,7 @@ import logo from "../../assets/logo.png";
 import {StartContainer, Main, BottomCta, Icons, MainLogo} from "./Start.css";
 import {Button} from "../../components";
 import {CurrenciesIcons} from "../../utils";
+import PropTypes from "prop-types";
 
 const Start = ({getStart}) => {
   return (
@@ -30,6 +31,10 @@ const Start = ({getStart}) => {
       </BottomCta>
     </StartContainer>
   );
+};
+
+Start.propTypes = {
+  getStart: PropTypes.func,
 };
 
 export default Start;

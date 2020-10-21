@@ -4,6 +4,7 @@ import Select from "react-select";
 import CustomOption from "./CustomOption";
 import CustomFlag from "./CustomFlag";
 import {Container, Label} from "./Select.css.js";
+import PropTypes from "prop-types";
 
 const SelectMenu = ({label, value, setCurrency, ...props}) => {
   const [currencies, setCurrencies] = useState([]);
@@ -76,6 +77,12 @@ const SelectMenu = ({label, value, setCurrency, ...props}) => {
       />
     </Container>
   );
+};
+
+SelectMenu.propTypes = {
+  label: PropTypes.string.isRequired,
+  value: PropTypes.object,
+  setCurrency: PropTypes.func.isRequired,
 };
 
 export default SelectMenu;

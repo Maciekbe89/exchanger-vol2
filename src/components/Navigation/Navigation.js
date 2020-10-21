@@ -1,5 +1,6 @@
 import React from "react";
 import {NavWrapper, Link} from "./Navigation.css";
+import PropTypes from "prop-types";
 
 const Navigation = ({items = []}) => {
   return (
@@ -11,6 +12,10 @@ const Navigation = ({items = []}) => {
       ))}
     </NavWrapper>
   );
+};
+
+Navigation.propTypes = {
+  items: PropTypes.array.isRequired,
 };
 
 export default Navigation;

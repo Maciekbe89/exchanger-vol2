@@ -1,5 +1,6 @@
 import React from "react";
 import {InputAmount} from "./Input.css";
+import PropTypes from "prop-types";
 
 const Input = ({onChange}) => {
   return (
@@ -12,6 +13,10 @@ const Input = ({onChange}) => {
       pattern="[0-9]*"
     />
   );
+};
+
+Input.propTypes = {
+  onChange: PropTypes.func.isRequired,
 };
 
 export default Input;
