@@ -5,3 +5,4 @@ export {currencyFormat} from "./CurrencyFormat";
 export {useChartsPath} from "./useChartsPath";
 export {useNewsPath} from "./useNewsPath";
 export {device} from "./device";
+export {CurrenciesIcons} from "./CurrenciesIcons";

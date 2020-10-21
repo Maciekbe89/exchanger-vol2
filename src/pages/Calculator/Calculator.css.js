@@ -6,9 +6,7 @@ export const Form = styled.form`
   display: grid;
   grid-template-rows: repeat(4, 1fr) 3fr;
   align-items: center;
-  max-width: 100%;
   height: 75vh;
-  background-color: ${({theme}) => theme.color.blue.dark};
   margin: 0 1.565em;
 
   @media ${device.webSmall}, ${device.mobileLandscape} {

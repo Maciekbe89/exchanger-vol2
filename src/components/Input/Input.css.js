@@ -3,7 +3,7 @@ import {device} from "../../utils";
 
 export const InputAmount = styled.input`
   height: 70%;
-  border-radius: 0.315em;
+  border-radius: 0.25em;
   border: none;
   padding-left: 0.625em;
   outline: none;

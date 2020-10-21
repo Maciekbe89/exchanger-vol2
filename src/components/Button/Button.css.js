@@ -46,7 +46,7 @@ export const ButtonCta = styled.button`
     secondary &&
     css`
       background-color: ${({theme}) => theme.color.orange.normal};
-      border-radius: 0.315em;
+      border-radius: 0.25em; ;
     `}
   ${({margin}) =>
     margin &&
