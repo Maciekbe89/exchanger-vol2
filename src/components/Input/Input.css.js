@@ -6,6 +6,7 @@ export const InputAmount = styled.input`
   border-radius: 0.315em;
   border: none;
   padding-left: 0.625em;
+  outline: none;
 
   @media ${device.webSmall}, ${device.mobileLandscape} {
     height: 38.5%;

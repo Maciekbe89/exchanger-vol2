@@ -12,6 +12,18 @@ export const Container = styled.div`
     grid-row: ${({position}) => position};
     margin-right: 1.565em;
   }
+  @media ${device.mobileLandscape} {
+    .css-1dnbm2d-control {
+      min-height: 0;
+      font-size: 0.85em;
+    }
+    .css-g1d714-ValueContainer {
+      position: static;
+    }
+    .css-tlfecz-indicatorContainer {
+      padding: 0;
+    }
+  }
 
   ${({margin}) =>
     margin &&
