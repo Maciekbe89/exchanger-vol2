@@ -7,9 +7,8 @@ import PL from "../../assets/flags/pl.png";
 import US from "../../assets/flags/us.png";
 
 const Charts = () => {
-  const [result, setResult] = useState("");
+  const [result, setResult] = useState({});
   const [hasErrors, setHasErrors] = useState(false);
-
   const [currencyFrom, setCurrencyFrom] = useState({
     value: "PLN",
     label: "PLN - Polish Zloty",
@@ -21,15 +20,37 @@ const Charts = () => {
     icon: `${US}`,
   });
 
-  const startDate = new Date(new Date().setDate(new Date().getDate() - 14))
-    .toLocaleDateString()
-    .split(".")
-    .reverse()
-    .join("-");
+  const currentDate = () => {
+    const date = new Date();
+    const days = date.getUTCDate();
+    const months = date.getUTCMonth() + 1;
+    const years = date.getFullYear();
+    const fullTodayDate = `${years}-${months}-${days}`;
+    return fullTodayDate;
+  };
+  const startDate = () => {
+    const date = new Date();
+    const days = date.getUTCDate() - 14;
+    const months = date.getUTCMonth() + 1;
+    const years = date.getFullYear();
+    const fullStartDate = `${years}-${months}-${days}`;
+    return fullStartDate;
+  };
 
-  const today = new Date().toLocaleDateString().split(".").reverse().join("-");
+  // const today = currentDate();
+  // const start = startDate();
 
-  const API = `https://api.exchangeratesapi.io/history?start_at=${startDate}&end_at=${today}&base=${currencyFrom.value}&symbols=${currencyTo.value}`;
+  // const startDate = new Date(new Date().setDate(new Date().getDate() - 14))
+  //   .toLocaleDateString()
+  //   .split(".")
+  //   .reverse()
+  //   .join("-");
+
+  // const today = new Date().toLocaleDateString().split(".").reverse().join("-");
+
+  const API = `https://api.exchangeratesapi.io/history?start_at=${startDate()}&end_at=${currentDate()}&base=${
+    currencyFrom.value
+  }&symbols=${currencyTo.value}`;
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -37,7 +58,11 @@ const Charts = () => {
       try {
         const response = await fetch(API);
         const data = await response.json();
-        setResult(data.rates);
+        if (data.rates) {
+          setResult(data.rates);
+        } else {
+          alert(JSON.stringify(data, null, 2));
+        }
       } catch (e) {
         setHasErrors(true);
       }
