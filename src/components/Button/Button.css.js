@@ -73,4 +73,7 @@ export const ButtonLink = styled.a`
   font-size: 0.875em;
   margin: 0;
   text-decoration: none;
+  @media ${device.webSmall}, ${device.mobileLandscape} {
+    padding: 0.5em 4em;
+  }
 `;

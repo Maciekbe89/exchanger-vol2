@@ -9,7 +9,7 @@ const News = () => {
   const [hasErrors, setHasErrors] = useState(false);
   const [isLoading, setIsLoading] = useState(FormatListNumbered);
 
-  const API = "https://rss.app/feeds/oNwptth2JLtqxDVx.xml";
+  const API = "https://rss.app/feeds/EjrQfLfzykUFWRZd.xml";
 
   useEffect(() => {
     const fetchData = async () => {
@@ -21,7 +21,6 @@ const News = () => {
         const parser = new DOMParser();
         const doc = parser.parseFromString(content, "text/xml");
         const items = Array.from(doc.querySelectorAll("item"));
-        console.log(items);
         setResult(
           items.slice(15).map((item) => {
             return {
@@ -56,7 +55,9 @@ const News = () => {
               <Title>{title}</Title>
               <Image src={image} />
               <Description>{description}</Description>
-              <Button link={link}>read more</Button>
+              <Button type="button" link={link}>
+                read more
+              </Button>
             </ArticleWrapper>
           ))}
         </Carousel>

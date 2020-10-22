@@ -22,31 +22,20 @@ const Charts = () => {
 
   const currentDate = () => {
     const date = new Date();
-    const days = date.getUTCDate();
-    const months = date.getUTCMonth() + 1;
+    const days = date.getDate();
+    const months = date.getMonth() + 1;
     const years = date.getFullYear();
-    const fullTodayDate = `${years}-${months}-${days}`;
-    return fullTodayDate;
+    const fullCurrentDate = `${years}-${months}-${days}`;
+    return fullCurrentDate;
   };
   const startDate = () => {
     const date = new Date();
-    const days = date.getUTCDate() - 14;
-    const months = date.getUTCMonth() + 1;
+    const days = date.getDate() - 14;
+    const months = date.getMonth() + 1;
     const years = date.getFullYear();
     const fullStartDate = `${years}-${months}-${days}`;
     return fullStartDate;
   };
-
-  // const today = currentDate();
-  // const start = startDate();
-
-  // const startDate = new Date(new Date().setDate(new Date().getDate() - 14))
-  //   .toLocaleDateString()
-  //   .split(".")
-  //   .reverse()
-  //   .join("-");
-
-  // const today = new Date().toLocaleDateString().split(".").reverse().join("-");
 
   const API = `https://api.exchangeratesapi.io/history?start_at=${startDate()}&end_at=${currentDate()}&base=${
     currencyFrom.value

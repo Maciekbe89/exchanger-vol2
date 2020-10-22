@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {device} from "../../utils";
 
 export const Container = styled.div`
   display: flex;
@@ -35,7 +36,7 @@ export const Container = styled.div`
     opacity: 0;
   }
   .rec.rec-dot_active {
-    box-shadow: 0 0 1px 3px #fff;
+    box-shadow: 0 0 1px 3px #fff !important;
   }
   .rec.rec-arrow:hover {
     background-color: ${({theme}) => theme.color.orange.normal};
@@ -52,6 +53,10 @@ export const ArticleWrapper = styled.div`
   justify-content: space-evenly;
   height: 75vh;
   outline: none;
+  @media ${device.webSmall}, ${device.mobileLandscape} {
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
 `;
 
 export const Title = styled.h1`
@@ -59,14 +64,23 @@ export const Title = styled.h1`
   font-size: 1em;
   margin: 0;
   text-align: center;
+  @media ${device.webSmall}, ${device.mobileLandscape} {
+    width: 100%;
+  }
 `;
 
 export const Image = styled.img`
   width: 100%;
-  height: 30%;
+  @media ${device.webSmall}, ${device.mobileLandscape} {
+    width: 45%;
+  }
+  /* height: 30%; */
 `;
 
 export const Description = styled.p`
   font-size: 0.875em;
   color: white;
+  @media ${device.webSmall}, ${device.mobileLandscape} {
+    width: 45%;
+  }
 `;
