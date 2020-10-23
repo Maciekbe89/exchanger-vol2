@@ -1,5 +1,17 @@
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
 import {device} from "../../utils";
+
+const appear = keyframes`
+0% {
+  opacity: 0;
+    transform: scale(.7);
+}
+
+100% {
+  opacity: 1;
+    transform: scale(1);
+}
+`;
 
 export const Container = styled.div`
   display: flex;
@@ -53,6 +65,7 @@ export const ArticleWrapper = styled.div`
   justify-content: space-evenly;
   height: 75vh;
   outline: none;
+  animation: ${appear} 1s ease-in-out;
   @media ${device.webSmall}, ${device.mobileLandscape} {
     flex-wrap: wrap;
     flex-direction: row;
@@ -74,7 +87,6 @@ export const Image = styled.img`
   @media ${device.webSmall}, ${device.mobileLandscape} {
     width: 45%;
   }
-  /* height: 30%; */
 `;
 
 export const Description = styled.p`

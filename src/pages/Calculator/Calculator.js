@@ -44,7 +44,6 @@ const Calculator = () => {
     setResultAmount(amount);
     setAmount(e.target.reset());
   };
-  console.log(result, result.toString().length);
 
   return (
     <Form onSubmit={onSubmit}>

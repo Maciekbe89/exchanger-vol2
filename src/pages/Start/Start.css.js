@@ -21,6 +21,21 @@ to {
     left: -5%;
 }
 `;
+const appear = keyframes`
+0% {
+  opacity: 0;
+    transform: scale(0);
+}
+
+75% {
+  opacity: 1;
+    transform: scale(1.3);
+}
+100% {
+  opacity: 1;
+    transform: scale(1);
+}
+`;
 
 export const StartContainer = styled.div`
   position: relative;
@@ -41,6 +56,7 @@ export const Main = styled.div`
 export const MainLogo = styled.img`
   width: 60%;
   z-index: 1;
+  animation: ${appear} 1.5s ease-in-out;
   @media ${device.mobileLandscape} {
     width: 30%;
   }

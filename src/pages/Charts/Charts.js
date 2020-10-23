@@ -10,14 +10,14 @@ const Charts = () => {
   const [result, setResult] = useState({});
   const [hasErrors, setHasErrors] = useState(false);
   const [currencyFrom, setCurrencyFrom] = useState({
-    value: "PLN",
-    label: "PLN - Polish Zloty",
-    icon: `${PL}`,
-  });
-  const [currencyTo, setCurrencyTo] = useState({
     value: "USD",
     label: "USD - US Dollar",
     icon: `${US}`,
+  });
+  const [currencyTo, setCurrencyTo] = useState({
+    value: "PLN",
+    label: "PLN - Polish Zloty",
+    icon: `${PL}`,
   });
 
   const currentDate = () => {
