@@ -1,11 +1,16 @@
 import React from "react";
 import {ErrorIcon, Text, Container} from "./Error.css";
+import {useCalcPath} from "../../utils";
 
-const Error = () => {
+const Error = ({calc}) => {
+  // const isCalcPath = useCalcPath();
   return (
     <Container>
       <ErrorIcon />
-      <Text>something wrong :(</Text>
+      <Text>
+        {/* {isCalcPath ? "the number is too big!" : "something wrong :("} */}
+        {calc ? "the number is too big!" : "something wrong :("}
+      </Text>
     </Container>
   );
 };

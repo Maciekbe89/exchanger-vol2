@@ -4,5 +4,6 @@ export {flags} from "./Flags";
 export {currencyFormat} from "./CurrencyFormat";
 export {useChartsPath} from "./useChartsPath";
 export {useNewsPath} from "./useNewsPath";
+export {useCalcPath} from "./useCalcPath";
 export {device} from "./device";
 export {CurrenciesIcons} from "./CurrenciesIcons";

@@ -35,7 +35,7 @@ const Calculator = () => {
       try {
         const response = await fetch(API);
         const data = await response.json();
-        setResult(amount * data.rates[currencyTo.value]);
+        setResult((amount * data.rates[currencyTo.value]).toFixed(2));
       } catch (e) {
         setHasErrors(true);
       }
@@ -44,6 +44,7 @@ const Calculator = () => {
     setResultAmount(amount);
     setAmount(e.target.reset());
   };
+  console.log(result, result.toString().length);
 
   return (
     <Form onSubmit={onSubmit}>
@@ -65,29 +66,33 @@ const Calculator = () => {
       <Button type="submit" secondary>
         <Checkmark />
       </Button>
-      <Result>
-        <AmountResult>
-          {" "}
-          {resultAmount
-            ? new Intl.NumberFormat(`${currencyFormat[currencyFrom.value]}`, {
-                style: "currency",
-                currency: `${currencyFrom.value}`,
-              }).format(resultAmount) + " ="
-            : ""}
-        </AmountResult>
-        {hasErrors ? (
-          <Error />
-        ) : (
-          <TotalResult>
-            {result
-              ? new Intl.NumberFormat(`${currencyFormat[currencyTo.value]}`, {
+      {result.toString().length < 15 ? (
+        <Result>
+          <AmountResult>
+            {" "}
+            {resultAmount
+              ? new Intl.NumberFormat(`${currencyFormat[currencyFrom.value]}`, {
                   style: "currency",
-                  currency: `${currencyTo.value}`,
-                }).format(result.toFixed(2))
-              : null}
-          </TotalResult>
-        )}
-      </Result>
+                  currency: `${currencyFrom.value}`,
+                }).format(resultAmount) + " ="
+              : ""}
+          </AmountResult>
+          {hasErrors ? (
+            <Error />
+          ) : (
+            <TotalResult>
+              {result
+                ? new Intl.NumberFormat(`${currencyFormat[currencyTo.value]}`, {
+                    style: "currency",
+                    currency: `${currencyTo.value}`,
+                  }).format(result)
+                : null}
+            </TotalResult>
+          )}
+        </Result>
+      ) : (
+        <Error calc />
+      )}
     </Form>
   );
 };
