@@ -74,6 +74,7 @@ const SelectMenu = ({label, value, setCurrency, ...props}) => {
         options={options}
         components={{Option: CustomOption, SingleValue: CustomFlag}}
         styles={customStyles}
+        isSearchable={false}
       />
     </Container>
   );

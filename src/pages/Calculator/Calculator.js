@@ -13,7 +13,7 @@ import EU from "../../assets/flags/eu.png";
 
 const Calculator = () => {
   const [amount, setAmount] = useState(0);
-  const [result, setResult] = useState(0);
+  const [result, setResult] = useState((0).toFixed(2));
   const [hasErrors, setHasErrors] = useState(false);
   const [resultAmount, setResultAmount] = useState(0);
   const [currencyFrom, setCurrencyFrom] = useState({
@@ -35,16 +35,16 @@ const Calculator = () => {
       try {
         const response = await fetch(API);
         const data = await response.json();
-        setResult(amount * data.rates[currencyTo.value].toFixed(2));
+        setResult((amount * data.rates[currencyTo.value]).toFixed(2));
+        console.log(result);
       } catch (e) {
         setHasErrors(true);
       }
     };
     fetchData();
     setResultAmount(amount);
-    setAmount(e.target.reset());
+    e.target.reset();
   };
-  console.log(result);
 
   return (
     <Form onSubmit={onSubmit}>
@@ -81,7 +81,7 @@ const Calculator = () => {
             <Error />
           ) : (
             <TotalResult>
-              {result
+              {result !== "0.00"
                 ? new Intl.NumberFormat(`${currencyFormat[currencyTo.value]}`, {
                     style: "currency",
                     currency: `${currencyTo.value}`,
