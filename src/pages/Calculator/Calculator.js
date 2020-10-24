@@ -35,7 +35,7 @@ const Calculator = () => {
       try {
         const response = await fetch(API);
         const data = await response.json();
-        setResult((amount * data.rates[currencyTo.value]).toFixed(2));
+        setResult(amount * data.rates[currencyTo.value].toFixed(2));
       } catch (e) {
         setHasErrors(true);
       }
@@ -44,6 +44,7 @@ const Calculator = () => {
     setResultAmount(amount);
     setAmount(e.target.reset());
   };
+  console.log(result);
 
   return (
     <Form onSubmit={onSubmit}>
