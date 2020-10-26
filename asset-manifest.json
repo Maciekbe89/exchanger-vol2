@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/exchanger-vol2/static/js/main.3ddb26b1.chunk.js",
-    "main.js.map": "/exchanger-vol2/static/js/main.3ddb26b1.chunk.js.map",
+    "main.js": "/exchanger-vol2/static/js/main.2c182377.chunk.js",
+    "main.js.map": "/exchanger-vol2/static/js/main.2c182377.chunk.js.map",
     "runtime-main.js": "/exchanger-vol2/static/js/runtime-main.4ac0b781.js",
     "runtime-main.js.map": "/exchanger-vol2/static/js/runtime-main.4ac0b781.js.map",
     "static/js/2.36fbe3af.chunk.js": "/exchanger-vol2/static/js/2.36fbe3af.chunk.js",
     "static/js/2.36fbe3af.chunk.js.map": "/exchanger-vol2/static/js/2.36fbe3af.chunk.js.map",
     "index.html": "/exchanger-vol2/index.html",
-    "precache-manifest.ed0e9eb2d1944817c3685452af56cabc.js": "/exchanger-vol2/precache-manifest.ed0e9eb2d1944817c3685452af56cabc.js",
+    "precache-manifest.17a76340e48bdf2ea1ee2f3b00d31efd.js": "/exchanger-vol2/precache-manifest.17a76340e48bdf2ea1ee2f3b00d31efd.js",
     "service-worker.js": "/exchanger-vol2/service-worker.js",
     "static/js/2.36fbe3af.chunk.js.LICENSE.txt": "/exchanger-vol2/static/js/2.36fbe3af.chunk.js.LICENSE.txt",
     "static/media/Oswald-Regular.ttf": "/exchanger-vol2/static/media/Oswald-Regular.e1996192.ttf",
@@ -21,6 +21,6 @@
   "entrypoints": [
     "static/js/runtime-main.4ac0b781.js",
     "static/js/2.36fbe3af.chunk.js",
-    "static/js/main.3ddb26b1.chunk.js"
+    "static/js/main.2c182377.chunk.js"
   ]
 }
