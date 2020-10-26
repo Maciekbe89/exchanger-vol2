@@ -2,12 +2,14 @@
 
 ## Hello!
 
-I present to you my new application. The Exchanger vol 2 is an app where you have 3 sections:
+I present my new application. The Exchanger vol 2 is an app where you have 3 sections:
 
 ![src/assets/screens/startpage.gif](src/assets/screens/startpage.gif)
 
 :dollar: currencies rate calculator (over 30 currencies to choose!),
-:chart_with_upwards_trend: history of currencies rate - on special chart
+
+:chart_with_upwards_trend: history of currencies rate - on special chart,
+
 :newspaper: current articles about financial sector.
 
 ![src/assets/screens/screen3.png](src/assets/screens/screen3.png)
