@@ -15,7 +15,7 @@ function App() {
         <Start getStart={() => setActive(false)} />
       ) : (
         <>
-          <Router>
+          <Router basename={process.env.PUBLIC_URL}>
             <NavTop>currency calculator</NavTop>
             <Switch>
               <Route exact path="/" component={Calculator} />

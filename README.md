@@ -16,7 +16,7 @@ I present my new application. The Exchanger vol 2 is an app where you have 3 sec
 ![src/assets/screens/screen2.png](src/assets/screens/screen2.png)
 ![src/assets/screens/screen1.png](src/assets/screens/screen1.png)
 
-All I created in [REACT JS](https://reactjs.org/) and [Styled-Component](https://styled-components.com/). All icons are from [Styled-Icons](https://styled-icons.js.org/). To the select input I used [React-Select](https://react-select.com/) and to the chart - [ApexCharts](https://apexcharts.com/).
+All I created in [REACT JS](https://reactjs.org/) and [Styled-Components](https://styled-components.com/). All icons are from [Styled-Icons](https://styled-icons.js.org/). To the select input I used [React-Select](https://react-select.com/) and to the chart - [ApexCharts](https://apexcharts.com/).
 
 It works well in multiple resolutions (mobile, tablet, desktop, portrait and landscape) :iphone: :computer:
 
