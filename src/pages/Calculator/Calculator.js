@@ -36,7 +36,6 @@ const Calculator = () => {
         const response = await fetch(API);
         const data = await response.json();
         setResult((amount * data.rates[currencyTo.value]).toFixed(2));
-        console.log(result);
       } catch (e) {
         setHasErrors(true);
       }

@@ -50,8 +50,8 @@ const News = () => {
         <Loading />
       ) : result.length > 0 ? (
         <Carousel>
-          {result.map(({title, description, link, image}) => (
-            <ArticleWrapper key={title}>
+          {result.map(({title, description, link, image}, id) => (
+            <ArticleWrapper key={id}>
               <Title>{title}</Title>
               <Image src={image} />
               <Description>{description}</Description>
