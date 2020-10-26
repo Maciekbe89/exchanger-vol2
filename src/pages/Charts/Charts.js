@@ -37,7 +37,7 @@ const Charts = () => {
     return fullStartDate;
   };
 
-  const API = `https://api.exch123angeratesapi.io/history?start_at=${startDate()}&end_at=${currentDate()}&base=${
+  const API = `https://api.exchangeratesapi.io/history?start_at=${startDate()}&end_at=${currentDate()}&base=${
     currencyFrom.value
   }&symbols=${currencyTo.value}`;
 
