@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.js": "/exchanger-vol2/static/js/main.71c6ab3c.chunk.js",
+    "main.js.map": "/exchanger-vol2/static/js/main.71c6ab3c.chunk.js.map",
+    "runtime-main.js": "/exchanger-vol2/static/js/runtime-main.4ac0b781.js",
+    "runtime-main.js.map": "/exchanger-vol2/static/js/runtime-main.4ac0b781.js.map",
+    "static/js/2.36fbe3af.chunk.js": "/exchanger-vol2/static/js/2.36fbe3af.chunk.js",
+    "static/js/2.36fbe3af.chunk.js.map": "/exchanger-vol2/static/js/2.36fbe3af.chunk.js.map",
+    "index.html": "/exchanger-vol2/index.html",
+    "precache-manifest.b8984d315f474718c6be73aeae57465e.js": "/exchanger-vol2/precache-manifest.b8984d315f474718c6be73aeae57465e.js",
+    "service-worker.js": "/exchanger-vol2/service-worker.js",
+    "static/js/2.36fbe3af.chunk.js.LICENSE.txt": "/exchanger-vol2/static/js/2.36fbe3af.chunk.js.LICENSE.txt",
+    "static/media/Oswald-Regular.ttf": "/exchanger-vol2/static/media/Oswald-Regular.e1996192.ttf",
+    "static/media/dollar.svg": "/exchanger-vol2/static/media/dollar.63fa626f.svg",
+    "static/media/euro.svg": "/exchanger-vol2/static/media/euro.b1045850.svg",
+    "static/media/pound.svg": "/exchanger-vol2/static/media/pound.cd9cbeb5.svg",
+    "static/media/shekel.svg": "/exchanger-vol2/static/media/shekel.985488b1.svg",
+    "static/media/won.svg": "/exchanger-vol2/static/media/won.6971094e.svg",
+    "static/media/yen.svg": "/exchanger-vol2/static/media/yen.a280f2a8.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4ac0b781.js",
+    "static/js/2.36fbe3af.chunk.js",
+    "static/js/main.71c6ab3c.chunk.js"
+  ]
+}
